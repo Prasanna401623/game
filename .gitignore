@@ -1,0 +1,7 @@
+*.rpyc
+*.rpa
+saves/
+tl/
+.vscode/
+.DS_Store
+Thumbs.db

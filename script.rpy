@@ -3,7 +3,7 @@ define h = Character('Harry', color="#6FA8DC")
 define k = Character('Kendall', color="#F4B183")
 
 # Background Image for the Maze Entrance
-image bg_maze = "maze_background_start.jpg"  # Replace with your maze image file
+image bg_maze = im.Scale("maze.webp", config.screen_width, config.screen_height)
 
 # Starting the game
 label start:
@@ -19,5 +19,3 @@ label start:
     k "So, the loop will keep trying paths until one leads us to the exit?"
     h "Exactly! In our case, the loop will check if we’ve reached the exit after each path."
 
-    # Jump to the next scene (writing the loop)
-    jump writing_loop
