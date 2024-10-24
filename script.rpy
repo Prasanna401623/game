@@ -2,8 +2,11 @@
 define h = Character('Harry', color="#6FA8DC")
 define k = Character('Kendall', color="#F4B183")
 
-# Background Image for the Maze Entrance
+# Background Image for the Maze Entrance, Maze Inside, Glitched Maze and Victory
 image bg_maze = im.Scale("maze.webp", config.screen_width, config.screen_height)
+image bg_maze_inside = im.Scale("mazeWithArrow.webp", config.screen_width, config.screen_height)
+image bg_glitched_maze = im.Scale("glitchedMaze.webp", config.screen_width, config.screen_height)
+image bg_victory = im.Scale("victory.webp", config.screen_width, config.screen_height)
 
 # Character Images
 image harry = "harry.png"
@@ -56,7 +59,7 @@ label start:
     
     label writing_loop:
     # Background remains the same maze with arrows
-    scene bg_maze with dissolve
+    scene bg_maze_inside with dissolve
     
     # Show Kendall on screen at the left
     show kendall at left
