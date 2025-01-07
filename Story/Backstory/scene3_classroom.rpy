@@ -30,12 +30,6 @@ label classroom_scene:
     harry "A virtual maze? That sounds awesome!"
 
     hide harry
-    show kendall at right
-    kendall "Wait… how do loops fit into a maze?"
-
-    hide kendall
-    show professor_carter at center
-    professor_carter "You’ll write code to navigate the maze, testing paths one by one until you find the exit. Think of it as debugging in real time."
 
     # Narration with suspense
     "The room falls silent as the glowing maze appears on the projector screen, its twisting paths shimmering with neon colors."
