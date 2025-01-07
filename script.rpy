@@ -117,4 +117,5 @@
 label start:
     call school_scene  # Call the first scene
     call hallway_scene # Call the second scene
+    call classroom_scene # Call the third scene
     return
