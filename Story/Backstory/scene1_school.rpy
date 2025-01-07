@@ -8,7 +8,7 @@ label school_scene:
     "In this calm moment, the school feels like the perfect setting for a normal day—though, today is anything but normal."
 
     # Add ambient sound for atmosphere
-    play sound "birds_chirping.ogg" fadein 2.0
+    play music "../audio/laststop-school.mp3"
 
     "Inside, a special challenge awaits. One that will test more than just skills—it will test determination, creativity, and teamwork."
 
