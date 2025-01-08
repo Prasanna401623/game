@@ -13,26 +13,26 @@ label maze_entrance:
   "The hum of unseen machinery mixes with the soft rustle of leaves, creating a setting that feels alive and full of secrets."
 
   # Show Kendall on screen
-  show kendall at left
+  show kendall at right
 
   # Kendall's dialogue
   kendall "Wow… This maze is enormous! How are we supposed to figure out which path is the right one?"
 
   # Switch to Harry
   hide kendall
-  show harry at right
+  show harry at left
 
   harry "We’ll solve it with code. Professor Carter’s challenge is all about using something called a loop."
 
   # Switch back to Kendall
   hide harry
-  show kendall at left
+  show kendall at right
 
   kendall "A loop? How’s that supposed to help us get out of here?"
 
   # Switch to Harry
   hide kendall
-  show harry at right
+  show harry at left
 
   # Harry explaining loops
   harry "Think of a loop as a way to repeat a set of actions. Specifically, a pre-test loop checks a condition first. If the condition is true, it keeps running."

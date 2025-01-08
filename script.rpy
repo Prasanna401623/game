@@ -119,4 +119,5 @@ label start:
     call hallway_scene # Call the second scene
     call classroom_scene # Call the third scene
     call maze_entrance # Call the fourth scene
+    call inside_maze # Call the fifth scene
     return
