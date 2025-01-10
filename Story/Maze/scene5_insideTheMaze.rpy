@@ -76,4 +76,30 @@ label inside_maze:
     scene bg_maze_interior with dissolve
     "Harry switches off his iPad, and the maze’s glowing walls seem to pulse brighter, as if aware of their intent."
 
+        # Harry starts the conversation about errors
+    show harry at left
+    harry "Now that you’ve seen how a loop works, there’s something else you should know."
+    harry "Even with the best intentions, loops can run into problems. Let me give you some examples."
+
+    # Kendall shows curiosity
+    hide harry
+    show kendall at right
+    kendall "Problems? What kind of problems?"
+
+    # Harry explains briefly
+    hide kendall
+    show harry at left
+    harry "For starters, you might encounter an infinite loop if the condition is never updated or if there's a mistake in your logic."
+    harry "But that’s not the only type of issue. There are others, too."
+
+    menu:
+        "Infinite Loop":
+            jump infinite_loop_error
+        "Logic Error":
+            jump logic_error
+
+    # After returning from the labels, continue the story
+    show harry at left
+    harry "These are just a couple of examples. Errors can be tricky, but with practice, they’re easy to spot and fix."
+    harry "Let’s keep going. We’ve got a maze to solve!"
     return
