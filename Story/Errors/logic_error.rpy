@@ -1,7 +1,6 @@
 label logic_error:
     # Explanation for Logic Error
     scene bg_maze_interior with dissolve
-    "Harry opens another code snippet, this time highlighting a logic error."
 
     # Harry starts the explanation
     show harry at left

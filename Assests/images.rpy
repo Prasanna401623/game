@@ -11,6 +11,8 @@ image bg_infinite_loop_code1 = im.Scale("../images/backgrounds/infiniteLoop.png"
 image bg_infinite_loop_code2 = im.Scale("../images/backgrounds/infiniteLoopCorrected.png", config.screen_width, config.screen_height)
 image bg_logic_error_code1 = im.Scale("../images/backgrounds/LogicError.png", config.screen_width, config.screen_height)
 image bg_logic_error_code2 = im.Scale("../images/backgrounds/CorrectedLogicError.png", config.screen_width, config.screen_height)
+image bg_off_by_one_code1 = im.Scale("../images/backgrounds/off-by-one-error.png", config.screen_width, config.screen_height)
+image bg_off_by_one_code2 = im.Scale("../images/backgrounds/Corrected-off-by-one-error.png", config.screen_width, config.screen_height)
 
 
 image harry ="../images/characters/harry.png"

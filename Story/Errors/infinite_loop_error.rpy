@@ -1,7 +1,6 @@
 label infinite_loop_error:
     # Explanation for Infinite Loop
     scene bg_maze_interior with dissolve
-    "The screen shows a snippet of code Harry has prepared, highlighting a common issue: the infinite loop."
 
     # Harry begins the explanation
     show harry at left

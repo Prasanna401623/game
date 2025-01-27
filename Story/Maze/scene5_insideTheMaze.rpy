@@ -97,6 +97,8 @@ label inside_maze:
             jump infinite_loop_error
         "Logic Error":
             jump logic_error
+        "Off-By-One Error":
+            jump off_by_one_error
 
     # After returning from the labels, continue the story
     show harry at left
