@@ -99,6 +99,8 @@ label inside_maze:
             jump logic_error
         "Off-By-One Error":
             jump off_by_one_error
+        "Pre-Test Logic Error":
+            jump pre_test_logic_error
 
     # After returning from the labels, continue the story
     show harry at left
