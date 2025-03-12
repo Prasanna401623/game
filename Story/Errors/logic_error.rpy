@@ -47,4 +47,9 @@ label logic_error:
     show harry at left
     harry "Exactly. With careful testing and attention to detail, you can catch logic errors before they cause trouble."
 
+    hide harry
+    scene bg_maze_interior with dissolve
+
+    jump choose_error
+
     return

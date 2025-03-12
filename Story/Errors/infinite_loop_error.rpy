@@ -46,4 +46,10 @@ label infinite_loop_error:
     show kendall at right
     kendall "Got it! So, as long as we update the condition properly, the loop will end when it’s supposed to."
 
+    hide kendall
+    scene bg_maze_interior with dissolve
+
+
+    jump choose_error
+
     return

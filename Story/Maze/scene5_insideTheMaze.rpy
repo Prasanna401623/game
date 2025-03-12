@@ -92,17 +92,27 @@ label inside_maze:
     harry "For starters, you might encounter an infinite loop if the condition is never updated or if there's a mistake in your logic."
     harry "But that’s not the only type of issue. There are others, too."
 
-    menu:
-        "Infinite Loop":
+label choose_error:
+    while error_options:
+        # Ask the player to choose an error
+        $ choice = renpy.display_menu([(error, error) for error in error_options])
+
+        # Remove the selected error from the list
+        $ remove_error(choice)
+
+        # Jump to the corresponding error explanation
+        if choice == "Infinite Loop":
             jump infinite_loop_error
-        "Logic Error":
+        elif choice == "Logic Error":
             jump logic_error
-        "Off-By-One Error":
+        elif choice == "Off-By-One Error":
             jump off_by_one_error
-        "Pre-Test Logic Error":
+        elif choice == "Pre-Test Logic Error":
             jump pre_test_logic_error
 
-    # After returning from the labels, continue the story
+    jump all_errors_done  # Once all errors are covered, continue the game
+
+label all_errors_done:
     show harry at left
     harry "These are just a couple of examples. Errors can be tricky, but with practice, they’re easy to spot and fix."
     harry "Let’s keep going. We’ve got a maze to solve!"

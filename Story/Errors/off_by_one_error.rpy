@@ -50,4 +50,9 @@ label off_by_one_error:
     show harry at left
     harry "Exactly! Paying attention to loop conditions will help you avoid off-by-one errors and other tricky mistakes."
 
+    hide harry
+    scene bg_maze_interior with dissolve
+
+    jump choose_error
+
     return

@@ -50,4 +50,9 @@ label pre_test_logic_error:
     show harry at left
     harry "Exactly! Setting the right initial value and condition is key to avoiding pre-test logic errors."
 
+    hide harry
+    scene bg_maze_interior with dissolve
+
+    jump choose_error
+
     return
