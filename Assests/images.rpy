@@ -15,6 +15,7 @@ image bg_off_by_one_code1 = im.Scale("../images/backgrounds/off-by-one-error.png
 image bg_off_by_one_code2 = im.Scale("../images/backgrounds/Corrected-off-by-one-error.png", config.screen_width, config.screen_height)
 image bg_pre_test_logic_error_code1 = im.Scale("../images/backgrounds/preTest_logic_Error.png", config.screen_width, config.screen_height)
 image bg_pre_test_logic_error_code2 = im.Scale("../images/backgrounds/Corrected_PreTest_logic_error.png", config.screen_width, config.screen_height)
+image bg_infinite_loop_quiz = im.Scale("../images/quizzes/infinite_loop_quiz.png", config.screen_width, config.screen_height)
 
 
 image harry ="../images/characters/harry.png"
