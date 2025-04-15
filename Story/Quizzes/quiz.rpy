@@ -11,36 +11,143 @@ label infinite_loop_quiz:
 
     return  # Ends the quiz when an option is chosen
 
-# Custom screen for button placement
-screen infinite_loop_quiz_screen():
-    vbox:
-        xpos 0.5  # Center the buttons horizontally
-        ypos 0.75  # Position the buttons lower on the screen
-        anchor (0.5, 0.5)  # Ensure proper alignment
-        spacing 20  # Adds space between buttons
+init python:
+    # Initialize score variables
+    score = 0
+    max_score = 0
+    attempts = 0
+    completed_quizzes = set()  # Track which quizzes have been completed
+    current_question = 0  # Track question numbers across all branches
 
-        # Answer Buttons
-        textbutton "It runs normally and stops after 5 iterations." action Jump("wrong_answer_infinite") style "quiz_button"
-        textbutton "It will run forever." action Jump("correct_answer_infinite") style "quiz_button"
-        textbutton "It won’t run at all." action Jump("wrong_answer_infinite") style "quiz_button"
+# Define styles for all quizzes
+style quiz_frame:
+    background Frame("gui/button/choice_idle_background.png", Borders(10, 10, 10, 10))
+    xsize 300
+    ysize 150
+    padding (10, 10)
+
+style quiz_text:
+    size 24
+    color "#00ffff"
+    hover_color "#ffffff"
+    text_align 0.5
+    xalign 0.5
+    yalign 0.5
+    outlines [(2, "#000000", 0, 0)]
+
+style quiz_question_text:
+    size 40
+    color "#ffffff"
+    text_align 0.5
+    xalign 0.5
+    yalign 0.5
+
+style score_text:
+    size 30
+    color "#ffffff"
+    text_align 1.0
+    xalign 1.0
+    yalign 0.0
+    outlines [(2, "#000000", 0, 0)]
+
+# Screen template for all quizzes
+screen quiz_template(question, options, question_number):
+    zorder 100  # Ensure this appears above other elements
+    
+    # Score display in top right
+    frame:
+        xalign 1.0
+        yalign 0.0
+        xoffset -40
+        yoffset 20
+        background "gui/frame.png"
+        padding (20, 20)
+        
+        vbox:
+            spacing 10
+            xsize 150
+            
+            text "Question [question_number]" size 25 xalign 0.5 color "#ffffff"
+            
+            frame:
+                background Frame("gui/button/choice_idle_background.png", Borders(10, 10, 10, 10))
+                padding (10, 10)
+                
+                vbox:
+                    spacing 5
+                    xalign 0.5
+                    
+                    text "Score" size 25 xalign 0.5 color "#ffffff"
+                    text "[score]/[max_score]" size 35 xalign 0.5 color "#00ffff"
+    
+    # Question
+    frame:
+        background None
+        xalign 0.5
+        yalign 0.2
+        text question style "quiz_question_text"
+    
+    # Options
+    hbox:
+        xalign 0.5
+        yalign 0.7
+        spacing 40
+        
+        for answer, action in options:
+            frame style "quiz_frame":
+                button:
+                    action action
+                    frame:
+                        background None
+                        padding (10, 10)
+                        vbox:
+                            xalign 0.5
+                            yalign 0.5
+                            text answer style "quiz_text"
+
+# Custom screen for infinite loop quiz
+screen infinite_loop_quiz_screen():
+    $ current_question = 0  # This is the preliminary question before the maze challenges
+    use quiz_template(
+        question="Question 0: What is the output of this code?\n\n# Code shows a while loop with no condition update",  # Added description for image creation
+        options=[
+            ("It runs normally and stops after 5 iterations.", Jump("wrong_answer_infinite")),
+            ("It will run forever.", Jump("correct_answer_infinite")),
+            ("It won't run at all.", Jump("wrong_answer_infinite"))
+        ],
+        question_number=current_question
+    )
 
 # Correct Answer
 label correct_answer_infinite:
-    show harry at left
-    harry "Good job! The condition never changes, so the loop runs forever."
-
-    menu:
-        "Continue to next quiz":
-            jump next_quiz_or_maze  # Jump to the next quiz or challenge
+    if "infinite_loop" not in completed_quizzes:
+        $ score += 1
+        $ max_score += 1
+        $ completed_quizzes.add("infinite_loop")
+        show harry at left
+        harry "Good job! The condition never changes, so the loop runs forever."
+        jump enable_phase
+    else:
+        jump enable_phase
 
 # Wrong Answer
 label wrong_answer_infinite:
-    show harry at left
-    harry "Not quite. Think about whether the loop condition is ever updated."
+    if "infinite_loop" not in completed_quizzes:
+        $ max_score += 1
+        $ attempts += 1
+        show harry at left
+        harry "Not quite. Think about whether the loop condition is ever updated."
 
-    menu:
-        "Try again":
-            jump infinite_loop_quiz
-        "Re-read about Infinite Loops":
-            jump infinite_loop_error  # Goes back to error explanation
+        if attempts >= 2:
+            harry "Let me explain this concept again."
+            $ attempts = 0
+            jump infinite_loop_error
+        else:
+            menu:
+                "Try again":
+                    jump infinite_loop_quiz
+                "Re-read about Infinite Loops":
+                    jump infinite_loop_error
+    else:
+        jump enable_phase
 

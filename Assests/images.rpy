@@ -21,3 +21,5 @@ image bg_infinite_loop_quiz = im.Scale("../images/quizzes/infinite_loop_quiz.png
 image harry ="../images/characters/harry.png"
 image kendall = "../images/characters/kendall.png"
 image professor_carter = "../images/characters/carter.png"
+
+image circle = "../images/quizzes/circle.png"

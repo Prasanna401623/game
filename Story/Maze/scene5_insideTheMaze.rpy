@@ -11,12 +11,12 @@ label inside_maze:
 
     # Kendall expresses awe
     show kendall at right
-    kendall "Whoa. This is nothing like the entrance. It’s like a whole other world in here."
+    kendall "Whoa. This is nothing like the entrance. It's like a whole other world in here."
 
     # Switch to Harry
     hide kendall
     show harry at left
-    harry "It’s definitely more than just a puzzle. But I think I can show you how we can solve it systematically."
+    harry "It's definitely more than just a puzzle. But I think I can show you how we can solve it systematically."
 
     # Harry takes out his iPad
     hide harry
@@ -38,7 +38,7 @@ label inside_maze:
 
     # Switch back to Kendall's voice
     show kendall at left
-    kendall "That’s what we’re stuck in?"
+    kendall "That's what we're stuck in?"
 
     # Switch to Harry
     hide kendall
@@ -48,7 +48,7 @@ label inside_maze:
 
     hide harry
     show kendall at right
-    kendall "Okay, I’m listening."
+    kendall "Okay, I'm listening."
 
     hide kendall
 
@@ -62,23 +62,23 @@ label inside_maze:
     # Show Kendall's reaction
     hide harry
     show kendall at right
-    kendall "So, it’s like the loop keeps asking, ‘Am I at the exit?’ and only stops when it gets a yes?"
+    kendall "So, it's like the loop keeps asking, 'Am I at the exit?' and only stops when it gets a yes?"
 
     # Switch to Harry
     hide kendall
     show harry at left
     harry "Exactly. Initially it first path is checked. If it doesn't lead to the exit, it moves to the next path."
     
-    harry "Pre-test loops are perfect for situations like this where we don’t know the solution upfront. We just keep testing until we find it."
+    harry "Pre-test loops are perfect for situations like this where we don't know the solution upfront. We just keep testing until we find it."
 
     # Transition back to the maze
     hide harry
     scene bg_maze_interior with dissolve
-    "Harry switches off his iPad, and the maze’s glowing walls seem to pulse brighter, as if aware of their intent."
+    "Harry switches off his iPad, and the maze's glowing walls seem to pulse brighter, as if aware of their intent."
 
         # Harry starts the conversation about errors
     show harry at left
-    harry "Now that you’ve seen how a loop works, there’s something else you should know."
+    harry "Now that you've seen how a loop works, there's something else you should know."
     harry "Even with the best intentions, loops can run into problems. Let me give you some examples."
 
     # Kendall shows curiosity
@@ -90,7 +90,7 @@ label inside_maze:
     hide kendall
     show harry at left
     harry "For starters, you might encounter an infinite loop if the condition is never updated or if there's a mistake in your logic."
-    harry "But that’s not the only type of issue. There are others, too."
+    harry "But that's not the only type of issue. There are others, too."
 
 label choose_error:
     while error_options:
@@ -114,6 +114,6 @@ label choose_error:
 
 label all_errors_done:
     show harry at left
-    harry "These are just a couple of examples. Errors can be tricky, but with practice, they’re easy to spot and fix."
-    harry "Let’s keep going. We’ve got a maze to solve!"
-    return
+    harry "These are just a couple of examples. Errors can be tricky, but with practice, they're easy to spot and fix."
+    harry "Let's keep going. We've got a maze to solve!"
+    jump enable_phase  # Jump to the next scene instead of returning
