@@ -37,10 +37,11 @@ style quiz_text:
 
 style quiz_question_text:
     size 40
-    color "#ffffff"
+    color "#00ffff"
     text_align 0.5
     xalign 0.5
     yalign 0.5
+    outlines [(2, "#000000", 0, 0)]
 
 style score_text:
     size 30
@@ -107,9 +108,9 @@ screen quiz_template(question, options, question_number):
 
 # Custom screen for infinite loop quiz
 screen infinite_loop_quiz_screen():
-    $ current_question = 0  # This is the preliminary question before the maze challenges
+    $ current_question = 1  # This is the first question
     use quiz_template(
-        question="Question 0: What is the output of this code?\n\n# Code shows a while loop with no condition update",  # Added description for image creation
+        question="Question 1: What is the output of this code?",
         options=[
             ("It runs normally and stops after 5 iterations.", Jump("wrong_answer_infinite")),
             ("It will run forever.", Jump("correct_answer_infinite")),
