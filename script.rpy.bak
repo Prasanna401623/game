@@ -115,10 +115,10 @@
 #     h "Keep going! We’re bound to find the right path."
 
 label start:
-    call school_scene from _call_school_scene  # Call the first scene
-    call hallway_scene from _call_hallway_scene # Call the second scene
-    call classroom_scene from _call_classroom_scene # Call the third scene
-    call maze_entrance from _call_maze_entrance # Call the fourth scene
-    call inside_maze from _call_inside_maze # Call the fifth scene
-    call infinite_loop_quiz from _call_infinite_loop_quiz
+    call school_scene  # Call the first scene
+    call hallway_scene # Call the second scene
+    call classroom_scene # Call the third scene
+    call maze_entrance # Call the fourth scene
+    call inside_maze # Call the fifth scene
+    call infinite_loop_quiz
     return

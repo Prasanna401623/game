@@ -23,3 +23,5 @@ image kendall = "../images/characters/kendall.png"
 image professor_carter = "../images/characters/carter.png"
 
 image circle = "../images/quizzes/circle.png"
+
+image bg_starting_screen = im.Scale("../images/backgrounds/StartingPage.png", config.screen_width, config.screen_height)

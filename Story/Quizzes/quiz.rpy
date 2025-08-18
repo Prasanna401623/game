@@ -1,4 +1,8 @@
 label infinite_loop_quiz:
+    # Skip if already completed
+    if "infinite_loop" in completed_quizzes:
+        return
+
     # Show the quiz background image (Your Canva design)
     scene bg_infinite_loop_quiz with fade
 
@@ -9,7 +13,10 @@ label infinite_loop_quiz:
     # Call the custom screen to display buttons
     call screen infinite_loop_quiz_screen
 
-    return  # Ends the quiz when an option is chosen
+    # After returning from the screen, check if we need to continue
+    if "infinite_loop" not in completed_quizzes:
+        jump infinite_loop_quiz
+    return
 
 init python:
     # Initialize score variables
@@ -127,9 +134,20 @@ label correct_answer_infinite:
         $ completed_quizzes.add("infinite_loop")
         show harry at left
         harry "Good job! The condition never changes, so the loop runs forever."
-        jump enable_phase
-    else:
-        jump enable_phase
+        
+        # Add short conversation
+        hide harry
+        show kendall at right
+        kendall "That makes sense! So we need to be careful about our loop conditions."
+        
+        hide kendall
+        show harry at left
+        harry "Exactly! Now that you understand infinite loops, you're ready to tackle more complex programming challenges."
+        
+        hide harry
+        show kendall at right
+        kendall "I can't wait to learn more!"
+    return
 
 # Wrong Answer
 label wrong_answer_infinite:
@@ -149,6 +167,5 @@ label wrong_answer_infinite:
                     jump infinite_loop_quiz
                 "Re-read about Infinite Loops":
                     jump infinite_loop_error
-    else:
-        jump enable_phase
+    return
 

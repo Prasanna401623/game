@@ -1,26 +1,26 @@
 # Screen for the maze navigation quiz
-screen maze_navigation_quiz():
-    modal True
+# screen maze_navigation_quiz():
+#     modal True
     
-    # Code snippet image
-    # Question 1: Code shows a basic maze navigation sequence that needs completion
-    # Example:
-    # def navigate_maze():
-    #     move_forward()
-    #     ___
-    #     move_forward()
-    add "maze_navigation_image" xalign 0.5 yalign 0.3
+#     # Code snippet image
+#     # Question 1: Code shows a basic maze navigation sequence that needs completion
+#     # Example:
+#     # def navigate_maze():
+#     #     move_forward()
+#     #     ___
+#     #     move_forward()
+#     add "maze_navigation_image" xalign 0.5 yalign 0.3
     
-    $ current_question = 1  # This is the first question in the sequence
-    use quiz_template(
-        question="Question 1: What command should come next?",
-        options=[
-            ("turn_right()", Return("correct")),
-            ("turn_left()", Return("wrong")),
-            ("move_backward()", Return("wrong"))
-        ],
-        question_number=current_question
-    )
+#     $ current_question = 1  # This is the first question in the sequence
+#     use quiz_template(
+#         question="Question 1: What command should come next?",
+#         options=[
+#             ("turn_right()", Return("correct")),
+#             ("turn_left()", Return("wrong")),
+#             ("move_backward()", Return("wrong"))
+#         ],
+#         question_number=current_question
+#     )
 
 # Initialize score at the start of the maze section
 label start_maze_section:
