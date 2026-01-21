@@ -6,8 +6,8 @@ label inside_maze:
     play sound "maze_interior_ambience.ogg" fadein 2.0
 
     # Narration: Describe the interior
-    "The maze stretches endlessly in all directions. Its glowing walls pulse faintly, as if alive, while shifting paths create an ever-changing puzzle."
-    "The air hums with energy, and a faint blue mist swirls around their feet."
+    "The maze stretches out in all directions. The walls glow faintly, and the paths keep shifting."
+    "A faint blue mist hangs in the air."
 
     # Kendall expresses awe
     show kendall at right
@@ -30,7 +30,7 @@ label inside_maze:
     # Harry takes out his iPad
     hide harry
     scene bg_ipad_black with dissolve
-    "Harry pulls out his iPad. The screen flickers to life, displaying an overhead view of simple maze."
+    "Harry pulls out his iPad. The screen lights up, showing an overhead view of simple maze."
 
     # Display the maze image
     scene bg_maze_example_ipad with fade
@@ -74,12 +74,12 @@ label inside_maze:
     # Transition back to the maze
     hide harry
     scene bg_maze_interior with dissolve
-    "Harry switches off his iPad, and the maze's glowing walls seem to pulse brighter, as if aware of their intent."
+    "Harry switches off his iPad and puts it away."
 
         # Harry starts the conversation about errors
     show harry at left
     harry "Now that you've seen how a loop works, there's something else you should know."
-    harry "Even with the best intentions, loops can run into problems. Let me give you some examples."
+    harry "Loops can run into problems. Let me give you some examples."
 
     # Kendall shows curiosity
     hide harry
@@ -114,7 +114,7 @@ label choose_error:
 
 label all_errors_done:
     show harry at left
-    harry "These are just a couple of examples. Errors can be tricky, but with practice, they're easy to spot and fix."
+    harry "These are just a couple of examples. Errors can be tricky, but you'll get better at spotting them with practice."
     harry "Before we tackle the maze, let's make sure you really understand these concepts."
     hide harry
     
