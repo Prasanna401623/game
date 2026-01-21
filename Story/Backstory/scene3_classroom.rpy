@@ -6,16 +6,16 @@ label classroom_scene:
     play sound "classroom_ambience.ogg" fadein 2.0
 
     # Narration
-    "The classroom is bright and buzzing with energy. Rows of glowing laptops light up eager faces as students chat about what the day holds."
+    "The classroom is bright and full of students. Laptops are open, and everyone's talking about what's coming next."
 
     # Show Professor Carter at the center
     show professor_carter at center
-    professor_carter "Alright, class, settle down. Today, we’re diving into something exciting. A challenge that will test your coding skills like never before."
+    professor_carter "Alright, class, settle down. Today, we're diving into something exciting. A challenge that will test your coding skills."
 
     # Show Harry and Kendall (speaking alternately)
     hide professor_carter
     show harry at left
-    harry "I knew it! Another one of Carter’s legendary challenges. I can’t wait!"
+    harry "I knew it! Another one of Carter's challenges. I can't wait!"
 
     hide harry
     show kendall at right
@@ -32,7 +32,7 @@ label classroom_scene:
     hide harry
 
     # Narration with suspense
-    "The room falls silent as the glowing maze appears on the projector screen, its twisting paths shimmering with neon colors."
+    "The room goes quiet. The maze appears on the projector screen—twisting paths lit up in neon colors."
 
     # Harry speaks with excitement
     hide professor_carter
@@ -49,5 +49,5 @@ label classroom_scene:
     professor_carter "This challenge is about teamwork, logic, and precision. Make every loop count. Are you ready?"
 
     # Transition to the maze setup
-    "The room buzzes with anticipation as students prepare for the challenge ahead."
+    "Students start getting ready for the challenge."
     return
