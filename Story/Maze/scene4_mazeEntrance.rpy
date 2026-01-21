@@ -6,11 +6,11 @@ label maze_entrance:
   play sound "maze_ambience.ogg" fadein 2.0
 
   # Narration: Describe the setting
-  "The entrance to the maze is both mesmerizing and strange. Towering metallic structures blend seamlessly with lush green vines and glowing flowers." 
+  "The entrance to the maze is strange. Metallic structures rise up between green vines and glowing flowers." 
   
-  "A faint mist drifts along the ground, adding an air of mystery." 
+  "A faint mist drifts along the ground." 
   
-  "The hum of unseen machinery mixes with the soft rustle of leaves, creating a setting that feels alive and full of secrets."
+  "The hum of machinery mixes with rustling leaves. The whole place feels alive."
 
   # Show Kendall on screen
   show kendall at right
@@ -22,7 +22,7 @@ label maze_entrance:
   hide kendall
   show harry at left
 
-  harry "We’ll solve it with code. Professor Carter’s challenge is all about using something called a loop."
+  harry "We'll solve it with code. Professor Carter's challenge is all about using a loop."
 
   # Switch back to Kendall
   hide harry
