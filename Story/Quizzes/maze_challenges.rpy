@@ -138,7 +138,7 @@ label correct_answer_challenge_2:
         
         hide kendall
         show harry at left
-        harry "Exactly! This is a best practice in programming."
+        harry "Exactly! That's how you write safe loops."
         hide harry
     return
 
@@ -231,7 +231,7 @@ label correct_answer_challenge_3:
         
         hide kendall
         show harry at left
-        harry "Exactly! You've mastered off-by-one errors!"
+        harry "Exactly! You've got off-by-one errors figured out!"
         hide harry
     return
 
