@@ -104,6 +104,44 @@ style score_text:
     yalign 0.0
     outlines [(2, "#000000", 0, 0)]
 
+# Final score display screen
+screen final_score_display():
+    zorder 100  # Ensure this appears above other elements
+    frame:
+        background Frame("gui/button/choice_idle_background.png", Borders(10, 10, 10, 10))
+        xalign 0.5
+        yalign 0.5
+        xsize 400
+        ysize 300
+        
+        vbox:
+            xalign 0.5
+            yalign 0.5
+            spacing 20
+            
+            text "Final Score" size 50 xalign 0.5 color "#ffffff"
+            
+            frame:
+                background Frame("gui/button/choice_idle_background.png", Borders(10, 10, 10, 10))
+                padding (20, 20)
+                
+                vbox:
+                    xalign 0.5
+                    yalign 0.5
+                    spacing 10
+                    
+                    text "[score]" size 60 xalign 0.5 color "#00ffff" outlines [(2, "#000000", 0, 0)]
+                    text "out of" size 25 xalign 0.5 color "#ffffff"
+                    text "[max_score]" size 40 xalign 0.5 color "#00ffff" outlines [(2, "#000000", 0, 0)]
+            
+            $ percentage = (score * 100) // max_score if max_score > 0 else 0
+            if percentage == 100:
+                text "Perfect Score!" size 30 xalign 0.5 color "#00ffff"
+            elif percentage >= 70:
+                text "Great Job!" size 30 xalign 0.5 color "#00ffff"
+            else:
+                text "Keep Practicing!" size 30 xalign 0.5 color "#00ffff"
+
 # Screen template for all quizzes
 screen quiz_template(question, options, question_number):
     zorder 100  # Ensure this appears above other elements

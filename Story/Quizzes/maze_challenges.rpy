@@ -1,0 +1,256 @@
+# ============================================================
+# ENABLE PHASE - MAZE CODE CHALLENGES
+# Students apply loop knowledge independently
+# ============================================================
+
+# ============================================================
+# CHALLENGE 1: Navigate the Maze (Loop Condition)
+# ============================================================
+label maze_challenge_1:
+    # Skip if already completed
+    if "maze_challenge_1" in completed_quizzes:
+        return
+
+    # Show the quiz background image (using same as infinite loop for now)
+    scene bg_infinite_loop_quiz with fade
+
+    # Display Harry to introduce the challenge
+    show harry at left
+    harry "Alright! Now it's time to apply what you've learned. Help me complete this code to navigate the maze."
+
+    # Call the custom screen to display buttons
+    call screen maze_challenge_1_screen
+
+    # After returning from the screen, check if we need to continue
+    if "maze_challenge_1" not in completed_quizzes:
+        jump maze_challenge_1
+    return
+
+# Custom screen for maze challenge 1
+screen maze_challenge_1_screen():
+    $ current_question = 5  # Continuing from quiz 4
+    use quiz_template(
+        question="Challenge 1: Choose the correct loop condition",
+        options=[
+            ("while at_exit", Jump("wrong_answer_challenge_1")),
+            ("while not at_exit", Jump("correct_answer_challenge_1")),
+            ("while True", Jump("wrong_answer_challenge_1"))
+        ],
+        question_number=current_question
+    )
+
+# Correct Answer for Challenge 1
+label correct_answer_challenge_1:
+    if "maze_challenge_1" not in completed_quizzes:
+        $ score += 1
+        $ max_score += 1
+        $ completed_quizzes.add("maze_challenge_1")
+        show harry at left
+        harry "Perfect! The loop should continue while we're NOT at the exit. Great job!"
+        
+        hide harry
+        show kendall at right
+        kendall "That makes sense! We keep going until we reach the exit."
+        
+        hide kendall
+        show harry at left
+        harry "Exactly! Let's move forward."
+        hide harry
+    return
+
+# Wrong Answer for Challenge 1
+label wrong_answer_challenge_1:
+    if "maze_challenge_1" not in completed_quizzes:
+        $ max_score += 1
+        $ attempts += 1
+        show harry at left
+        harry "Not quite. Think about when the loop should keep running."
+
+        if attempts >= 2:
+            harry "Remember what we learned about loop conditions."
+            $ attempts = 0
+            menu:
+                "Try again":
+                    jump maze_challenge_1
+                "Review concepts":
+                    # Brief reminder without full error lesson
+                    harry "We want the loop to continue WHILE we haven't reached the exit yet."
+                    jump maze_challenge_1
+        else:
+            jump maze_challenge_1
+    return
+
+
+# ============================================================
+# CHALLENGE 2: Prevent Infinite Loop (Add Safety Counter)
+# ============================================================
+label maze_challenge_2:
+    # Skip if already completed
+    if "maze_challenge_2" in completed_quizzes:
+        return
+
+    # Show the quiz background image
+    scene bg_infinite_loop_quiz with fade
+
+    # Display Harry to introduce the challenge
+    show harry at left
+    harry "Good! Now, we need to make sure our loop doesn't run forever. What should we add?"
+
+    # Call the custom screen to display buttons
+    call screen maze_challenge_2_screen
+
+    # After returning from the screen, check if we need to continue
+    if "maze_challenge_2" not in completed_quizzes:
+        jump maze_challenge_2
+    return
+
+# Custom screen for maze challenge 2
+screen maze_challenge_2_screen():
+    $ current_question = 6
+    use quiz_template(
+        question="Challenge 2: What's the safest loop condition?",
+        options=[
+            ("while not at_exit", Jump("partial_answer_challenge_2")),
+            ("while not at_exit and steps < 100", Jump("correct_answer_challenge_2")),
+            ("while steps < 100", Jump("wrong_answer_challenge_2"))
+        ],
+        question_number=current_question
+    )
+
+# Correct Answer for Challenge 2
+label correct_answer_challenge_2:
+    if "maze_challenge_2" not in completed_quizzes:
+        $ score += 1
+        $ max_score += 1
+        $ completed_quizzes.add("maze_challenge_2")
+        show harry at left
+        harry "Excellent! Adding a step counter prevents infinite loops while still checking for the exit."
+        
+        hide harry
+        show kendall at right
+        kendall "So we check both conditions—not at exit AND haven't exceeded max steps!"
+        
+        hide kendall
+        show harry at left
+        harry "Exactly! This is a best practice in programming."
+        hide harry
+    return
+
+# Partial Answer for Challenge 2
+label partial_answer_challenge_2:
+    if "maze_challenge_2" not in completed_quizzes:
+        $ max_score += 1
+        $ attempts += 1
+        show harry at left
+        harry "That works, but what if the maze has a bug? We might get stuck in an infinite loop!"
+        harry "Think about what we learned about preventing infinite loops."
+        
+        if attempts >= 2:
+            harry "Remember, we should add a safety counter to prevent infinite loops."
+            $ attempts = 0
+        jump maze_challenge_2
+    return
+
+# Wrong Answer for Challenge 2
+label wrong_answer_challenge_2:
+    if "maze_challenge_2" not in completed_quizzes:
+        $ max_score += 1
+        $ attempts += 1
+        show harry at left
+        harry "That's not quite right. We still need to check if we've reached the exit!"
+        
+        if attempts >= 2:
+            harry "We need BOTH conditions: checking for the exit AND limiting the steps."
+            $ attempts = 0
+        jump maze_challenge_2
+    return
+
+
+# ============================================================
+# CHALLENGE 3: Fix Off-By-One Error (Path Counting)
+# ============================================================
+label maze_challenge_3:
+    # Skip if already completed
+    if "maze_challenge_3" in completed_quizzes:
+        return
+
+    # Show the quiz background image
+    scene bg_infinite_loop_quiz with fade
+
+    # Display Harry to introduce the challenge
+    show harry at left
+    harry "We need to check exactly 5 paths. Which condition is correct?"
+
+    # Call the custom screen to display buttons
+    call screen maze_challenge_3_screen
+
+    # After returning from the screen, check if we need to continue
+    if "maze_challenge_3" not in completed_quizzes:
+        jump maze_challenge_3
+    return
+
+# Custom screen for maze challenge 3
+screen maze_challenge_3_screen():
+    $ current_question = 7
+    use quiz_template(
+        question="Challenge 3: Check exactly 5 paths (1 to 5)",
+        options=[
+            ("while path < 5", Jump("wrong_answer_challenge_3")),
+            ("while path <= 5", Jump("correct_answer_challenge_3")),
+            ("while path < 6", Jump("correct_answer_challenge_3_alt"))
+        ],
+        question_number=current_question
+    )
+
+# Correct Answer for Challenge 3
+label correct_answer_challenge_3:
+    if "maze_challenge_3" not in completed_quizzes:
+        $ score += 1
+        $ max_score += 1
+        $ completed_quizzes.add("maze_challenge_3")
+        show harry at left
+        harry "Perfect! Using <= 5 means we check paths 1, 2, 3, 4, and 5. That's exactly what we need!"
+        
+        hide harry
+        show kendall at right
+        kendall "I see! The <= includes 5, while < would stop before it."
+        
+        hide kendall
+        show harry at left
+        harry "Exactly! You've mastered off-by-one errors!"
+        hide harry
+    return
+
+# Alternative Correct Answer for Challenge 3
+label correct_answer_challenge_3_alt:
+    if "maze_challenge_3" not in completed_quizzes:
+        $ score += 1
+        $ max_score += 1
+        $ completed_quizzes.add("maze_challenge_3")
+        show harry at left
+        harry "Correct! Using < 6 also checks paths 1 through 5. Both this and <= 5 work!"
+        
+        hide harry
+        show kendall at right
+        kendall "So there can be multiple ways to write the same logic?"
+        
+        hide kendall
+        show harry at left
+        harry "Exactly! As long as the logic is correct, there are often multiple solutions."
+        hide harry
+    return
+
+# Wrong Answer for Challenge 3
+label wrong_answer_challenge_3:
+    if "maze_challenge_3" not in completed_quizzes:
+        $ max_score += 1
+        $ attempts += 1
+        show harry at left
+        harry "Not quite. That would only check paths 1, 2, 3, and 4. We'd miss path 5!"
+        harry "Remember what we learned about off-by-one errors."
+        
+        if attempts >= 2:
+            harry "We need to include 5 in our check. Think about < versus <=."
+            $ attempts = 0
+        jump maze_challenge_3
+    return
