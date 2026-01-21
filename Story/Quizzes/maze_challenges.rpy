@@ -16,7 +16,8 @@ label maze_challenge_1:
 
     # Display Harry to introduce the challenge
     show harry at left
-    harry "Alright! Now it's time to apply what you've learned. Help me complete this code to navigate the maze."
+    harry "Alright, we're at our first junction. I've got the basic navigation code here."
+    harry "But I need you to tell me—what condition should keep us moving?"
 
     # Call the custom screen to display buttons
     call screen maze_challenge_1_screen
@@ -28,15 +29,15 @@ label maze_challenge_1:
 
 # Custom screen for maze challenge 1
 screen maze_challenge_1_screen():
-    $ current_question = 5  # Continuing from quiz 4
-    use quiz_template(
+    $ challenge_number = 1  # First challenge
+    use challenge_template(
         question="Challenge 1: Choose the correct loop condition",
         options=[
+            ("while True", Jump("wrong_answer_challenge_1")),
             ("while at_exit", Jump("wrong_answer_challenge_1")),
-            ("while not at_exit", Jump("correct_answer_challenge_1")),
-            ("while True", Jump("wrong_answer_challenge_1"))
+            ("while not at_exit", Jump("correct_answer_challenge_1"))
         ],
-        question_number=current_question
+        challenge_number=challenge_number
     )
 
 # Correct Answer for Challenge 1
@@ -92,9 +93,14 @@ label maze_challenge_2:
     # Show the quiz background image
     scene bg_infinite_loop_quiz with fade
 
-    # Display Harry to introduce the challenge
+    # Display Harry to introduce the challenge with story context
+    show kendall at right
+    kendall "Great! That worked! But... what if the maze has a glitch or something?"
+    kendall "Couldn't we get stuck in an infinite loop?"
+    
+    hide kendall
     show harry at left
-    harry "Good! Now, we need to make sure our loop doesn't run forever. What should we add?"
+    harry "Good thinking! We should add a safety measure. What's the best way to write this loop condition?"
 
     # Call the custom screen to display buttons
     call screen maze_challenge_2_screen
@@ -106,15 +112,15 @@ label maze_challenge_2:
 
 # Custom screen for maze challenge 2
 screen maze_challenge_2_screen():
-    $ current_question = 6
-    use quiz_template(
+    $ challenge_number = 2
+    use challenge_template(
         question="Challenge 2: What's the safest loop condition?",
         options=[
-            ("while not at_exit", Jump("partial_answer_challenge_2")),
             ("while not at_exit and steps < 100", Jump("correct_answer_challenge_2")),
-            ("while steps < 100", Jump("wrong_answer_challenge_2"))
+            ("while steps < 100", Jump("wrong_answer_challenge_2")),
+            ("while not at_exit", Jump("partial_answer_challenge_2"))
         ],
-        question_number=current_question
+        challenge_number=challenge_number
     )
 
 # Correct Answer for Challenge 2
@@ -177,9 +183,17 @@ label maze_challenge_3:
     # Show the quiz background image
     scene bg_infinite_loop_quiz with fade
 
-    # Display Harry to introduce the challenge
+    # Display with story context
     show harry at left
-    harry "We need to check exactly 5 paths. Which condition is correct?"
+    harry "We're getting close! I can see the exit, but there are 5 different paths ahead."
+    
+    hide harry
+    show kendall at right
+    kendall "So we need to check all 5 paths, numbered 1 through 5?"
+    
+    hide kendall
+    show harry at left
+    harry "Exactly. Which loop condition will check all 5 without missing any?"
 
     # Call the custom screen to display buttons
     call screen maze_challenge_3_screen
@@ -191,15 +205,15 @@ label maze_challenge_3:
 
 # Custom screen for maze challenge 3
 screen maze_challenge_3_screen():
-    $ current_question = 7
-    use quiz_template(
+    $ challenge_number = 3
+    use challenge_template(
         question="Challenge 3: Check exactly 5 paths (1 to 5)",
         options=[
+            ("while path < 6", Jump("correct_answer_challenge_3_alt")),
             ("while path < 5", Jump("wrong_answer_challenge_3")),
-            ("while path <= 5", Jump("correct_answer_challenge_3")),
-            ("while path < 6", Jump("correct_answer_challenge_3_alt"))
+            ("while path <= 5", Jump("correct_answer_challenge_3"))
         ],
-        question_number=current_question
+        challenge_number=challenge_number
     )
 
 # Correct Answer for Challenge 3

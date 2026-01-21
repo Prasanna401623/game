@@ -197,6 +197,61 @@ screen quiz_template(question, options, question_number):
                             yalign 0.5
                             text answer style "quiz_text"
 
+# Screen template for maze challenges (separate from quizzes)
+screen challenge_template(question, options, challenge_number):
+    zorder 100  # Ensure this appears above other elements
+    
+    # Challenge progress display in top right
+    frame:
+        xalign 1.0
+        yalign 0.0
+        xoffset -40
+        yoffset 20
+        background "gui/frame.png"
+        padding (20, 20)
+        
+        vbox:
+            spacing 10
+            xsize 150
+            
+            text "Challenge [challenge_number]" size 25 xalign 0.5 color "#00ff00"
+            
+            frame:
+                background Frame("gui/button/choice_idle_background.png", Borders(10, 10, 10, 10))
+                padding (10, 10)
+                
+                vbox:
+                    spacing 5
+                    xalign 0.5
+                    
+                    text "Quiz Score" size 20 xalign 0.5 color "#ffffff"
+                    text "[score]/[max_score]" size 30 xalign 0.5 color "#00ffff"
+    
+    # Question
+    frame:
+        background None
+        xalign 0.5
+        yalign 0.2
+        text question style "quiz_question_text"
+    
+    # Options
+    hbox:
+        xalign 0.5
+        yalign 0.7
+        spacing 40
+        
+        for answer, action in options:
+            frame style "quiz_frame":
+                button:
+                    action action
+                    frame:
+                        background None
+                        padding (10, 10)
+                        vbox:
+                            xalign 0.5
+                            yalign 0.5
+                            text answer style "quiz_text"
+
 # Custom screen for infinite loop quiz
 screen infinite_loop_quiz_screen():
     $ current_question = 1  # This is the first question
@@ -283,9 +338,9 @@ screen logic_error_quiz_screen():
     use quiz_template(
         question="Question 2: What happens when you run this code?",
         options=[
-            ("It prints 'Found it!' once.", Jump("wrong_answer_logic")),
             ("It never prints anything.", Jump("correct_answer_logic")),
-            ("It prints 'Found it!' 5 times.", Jump("wrong_answer_logic"))
+            ("It prints 'Found it!' 5 times.", Jump("wrong_answer_logic")),
+            ("It prints 'Found it!' once.", Jump("wrong_answer_logic"))
         ],
         question_number=current_question
     )
@@ -363,9 +418,9 @@ screen off_by_one_quiz_screen():
     use quiz_template(
         question="Question 3: How many times does this loop print 'Hello'?",
         options=[
+            ("6 times", Jump("wrong_answer_off_by_one")),
             ("5 times", Jump("wrong_answer_off_by_one")),
-            ("4 times", Jump("correct_answer_off_by_one")),
-            ("6 times", Jump("wrong_answer_off_by_one"))
+            ("4 times", Jump("correct_answer_off_by_one"))
         ],
         question_number=current_question
     )
@@ -443,9 +498,9 @@ screen pre_test_logic_quiz_screen():
     use quiz_template(
         question="Question 4: What is the output of this code?",
         options=[
-            ("It prints 10, 11, 12, 13, 14", Jump("wrong_answer_pre_test")),
             ("It prints nothing", Jump("correct_answer_pre_test")),
-            ("It runs forever", Jump("wrong_answer_pre_test"))
+            ("It runs forever", Jump("wrong_answer_pre_test")),
+            ("It prints 10, 11, 12, 13, 14", Jump("wrong_answer_pre_test"))
         ],
         question_number=current_question
     )

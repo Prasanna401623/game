@@ -5,19 +5,28 @@ label enable_phase:
     # Add ambient maze sounds
     play sound "maze_interior_ambience.ogg" fadein 2.0
 
-    # Introduction to Enable Phase
-    show harry at left
-    harry "Now that you've learned about all the loop errors, it's time to apply your knowledge!"
-    harry "I'll give you some code challenges. You'll need to complete them on your own."
-    
-    hide harry
+    # Story-driven introduction to Enable Phase
     show kendall at right
-    kendall "On my own? No hints this time?"
+    kendall "Okay, we've studied all the errors. But we're still stuck in this maze!"
     
     hide kendall
     show harry at left
-    harry "You've got this, Kendall! Everything you need to know, you've already learned."
+    harry "You're right. The knowledge was important, but now we need to actually use it to get out of here."
+    
     hide harry
+    show kendall at right
+    kendall "So... we need to write the actual code to navigate through?"
+    
+    hide kendall
+    show harry at left
+    harry "Exactly! I'll help guide you, but you'll need to make the decisions yourself."
+    harry "Think of it like... I'm your code reviewer, but you're the programmer."
+    
+    hide harry
+    show kendall at right
+    kendall "No pressure, right?"
+    kendall "Okay, I can do this. Let's start!"
+    hide kendall
     
     # Reset attempts for challenges
     $ attempts = 0
