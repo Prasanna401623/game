@@ -115,5 +115,11 @@ label choose_error:
 label all_errors_done:
     show harry at left
     harry "These are just a couple of examples. Errors can be tricky, but with practice, they're easy to spot and fix."
-    harry "Let's keep going. We've got a maze to solve!"
+    harry "Before we tackle the maze, let's make sure you really understand these concepts."
+    hide harry
+    
+    # Call all quizzes in sequence
+    call all_quizzes
+    
+    # After quizzes, move to enable phase
     jump enable_phase  # Jump to the next scene instead of returning

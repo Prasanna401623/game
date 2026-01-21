@@ -120,5 +120,5 @@ label start:
     call classroom_scene from _call_classroom_scene # Call the third scene
     call maze_entrance from _call_maze_entrance # Call the fourth scene
     call inside_maze from _call_inside_maze # Call the fifth scene
-    call infinite_loop_quiz from _call_infinite_loop_quiz
+    # Quizzes are now called automatically after all errors are learned
     return
