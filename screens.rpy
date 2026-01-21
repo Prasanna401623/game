@@ -363,6 +363,24 @@ screen main_menu():
     ## contents of the main menu are in the navigation screen.
     use navigation
 
+    ## Credits text at the bottom center
+    vbox:
+        xalign 0.5
+        yalign 0.95
+        spacing 5
+        
+        text "Created by: Prasanna Kumar Jha":
+            size 24
+            color "#ffffff"
+            xalign 0.5
+            outlines [(2, "#000000", 0, 0)]
+        
+        text "Mentor: Dr. Paul D. Wiedemeier":
+            size 24
+            color "#ffffff"
+            xalign 0.5
+            outlines [(2, "#000000", 0, 0)]
+
     if gui.show_name:
 
         vbox:
