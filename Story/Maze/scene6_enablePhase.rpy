@@ -57,7 +57,7 @@ label maze_victory:
     
     # Maze escape sequence
     scene bg_maze_interior with dissolve
-    "The maze walls begin to shift and glow. A clear path forward appears, illuminated by bright blue light."
+    "The maze walls begin to shift and glow. A clear path forward appears, lit up in blue."
     
     scene bg_maze with dissolve
     "Harry and Kendall rush through the glowing pathway, their footsteps echoing through the corridors."
@@ -69,7 +69,7 @@ label maze_victory:
     
     hide kendall
     show harry at left
-    harry "You did more than escape, Kendall. You mastered pre-test loops!"
+    harry "You escaped the maze, Kendall. And you've got pre-test loops down now!"
     
     hide harry
     show kendall at right
@@ -99,7 +99,7 @@ label maze_victory:
     
     "Congratulations! You've completed 'Escape the Virtual Maze'!"
     "You've learned about pre-test loops, common errors, and how to fix them."
-    "Keep practicing, and you'll become a loop master in no time!"
+    "Keep practicing!"
     
     hide harry
     hide kendall
