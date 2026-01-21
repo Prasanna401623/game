@@ -7,6 +7,8 @@ image bg_maze_interior = im.Scale("../images/backgrounds/mazeWithArrow.webp", co
 image bg_maze_example_ipad = im.Scale("../images/InsideTheMaze/mazeExample.png", config.screen_width, config.screen_height)
 image bg_ipad_black = im.Scale("../images/InsideTheMaze/opening_iPad.png", config.screen_width, config.screen_height)
 image maze_iPad_solveSimpleMaze = im.Scale("../images/InsideTheMaze/code_to_solveSimpleMaze.png", config.screen_width, config.screen_height)
+image bg_victory = im.Scale("../images/backgrounds/victory.webp", config.screen_width, config.screen_height)
+
 image bg_infinite_loop_code1 = im.Scale("../images/backgrounds/infiniteLoop.png", config.screen_width, config.screen_height)
 image bg_infinite_loop_code2 = im.Scale("../images/backgrounds/infiniteLoopCorrected.png", config.screen_width, config.screen_height)
 image bg_logic_error_code1 = im.Scale("../images/backgrounds/LogicError.png", config.screen_width, config.screen_height)

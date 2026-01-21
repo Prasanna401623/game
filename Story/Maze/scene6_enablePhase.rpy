@@ -62,8 +62,8 @@ label maze_victory:
     scene bg_maze with dissolve
     "Harry and Kendall rush through the glowing pathway, their footsteps echoing through the corridors."
     
-    # Victory scene
-    scene bg_maze with fade
+    # Victory scene with victory background
+    scene bg_victory with fade
     show kendall at right
     kendall "We made it! We escaped the maze!"
     
@@ -85,7 +85,7 @@ label maze_victory:
     
     # Show final score one more time
     hide kendall
-    scene bg_maze_interior with fade
+    scene bg_victory with fade
     show screen final_score_display
     with dissolve
     pause 4.0
@@ -93,7 +93,7 @@ label maze_victory:
     with dissolve
     
     # Final message
-    scene bg_maze with fade
+    scene bg_victory with fade
     show harry at left with dissolve
     show kendall at right with dissolve
     
