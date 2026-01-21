@@ -385,7 +385,7 @@ label pre_test_logic_quiz:
         return
 
     # Show the quiz background image
-    scene bg_pre_test_logic_error with fade
+    scene bg_pre_test_logic_error_quiz with fade
 
     # Display Harry to ask the question
     show harry at left
