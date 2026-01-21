@@ -25,7 +25,7 @@ label all_quizzes:
     call off_by_one_quiz
     call pre_test_logic_quiz
     
-    # All quizzes completed
+    # All quizzes completed - show final score
     scene bg_maze_interior with fade
     show harry at left
     harry "You've completed all the quizzes! Let me show you your final score."
@@ -37,15 +37,6 @@ label all_quizzes:
     pause 3.0
     hide screen final_score_display
     with dissolve
-    
-    # Transition to enable phase
-    show kendall at right
-    kendall "I learned so much! Now I feel ready to tackle the maze!"
-    hide kendall
-    
-    show harry at left
-    harry "Perfect! Now it's time to put your knowledge into practice. Let's escape this maze!"
-    hide harry
     
     return
 
