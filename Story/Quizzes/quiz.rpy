@@ -281,7 +281,7 @@ label correct_answer_infinite:
         
         hide kendall
         show harry at left
-        harry "Exactly! Now that you understand infinite loops, you're ready to tackle more complex programming challenges."
+        harry "Exactly! Now you know how to spot infinite loops."
         
         hide harry
         show kendall at right
@@ -352,7 +352,7 @@ label correct_answer_logic:
         $ max_score += 1
         $ completed_quizzes.add("logic_error")
         show harry at left
-        harry "Excellent! The condition 'count > 5' is never true because the loop stops at count < 5. This is a classic logic error."
+        harry "Excellent! The condition 'count > 5' is never true because the loop stops at count < 5. That's a logic error."
         
         # Add short conversation
         hide harry
@@ -361,7 +361,7 @@ label correct_answer_logic:
         
         hide kendall
         show harry at left
-        harry "Exactly! Logic errors are sneaky because the code works, but it doesn't do what you intended."
+        harry "Exactly! Logic errors are tricky because the code runs, but it doesn't do what you want."
         
         hide harry
         show kendall at right
@@ -441,7 +441,7 @@ label correct_answer_off_by_one:
         
         hide kendall
         show harry at left
-        harry "Exactly! That's the key to avoiding off-by-one errors—pay attention to < versus <=."
+        harry "Exactly! Just pay attention to < versus <=."
         
         hide harry
         show kendall at right
@@ -512,7 +512,7 @@ label correct_answer_pre_test:
         $ max_score += 1
         $ completed_quizzes.add("pre_test_logic")
         show harry at left
-        harry "Brilliant! Since count starts at 10 and the condition is 'count < 5', the condition is false from the very beginning. The loop never runs!"
+        harry "Correct! Since count starts at 10 and the condition is 'count < 5', the condition is false from the very beginning. The loop never runs!"
         
         # Add short conversation
         hide harry
