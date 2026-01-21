@@ -20,6 +20,12 @@ image bg_logic_error_quiz = im.Scale("../images/quizzes/logic_error_quiz.png", c
 image bg_off_by_one_quiz = im.Scale("../images/quizzes/off_by_one_quiz.png", config.screen_width, config.screen_height)
 image bg_pre_test_logic_error_quiz = im.Scale("../images/quizzes/pre_test_logic_error.png", config.screen_width, config.screen_height)
 
+image bg_maze_challenge_1 = im.Scale("../images/challenges/maze_challenge_1.png", config.screen_width, config.screen_height)
+
+image bg_maze_challenge_2 = im.Scale("../images/challenges/maze_challenge_2.png", config.screen_width, config.screen_height)
+
+image bg_maze_challenge_3 = im.Scale("../images/challenges/maze_challenge_3.png", config.screen_width, config.screen_height)
+
 
 image harry ="../images/characters/harry.png"
 image kendall = "../images/characters/kendall.png"

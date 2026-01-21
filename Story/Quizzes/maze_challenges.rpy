@@ -11,8 +11,8 @@ label maze_challenge_1:
     if "maze_challenge_1" in completed_quizzes:
         return
 
-    # Show the quiz background image (using same as infinite loop for now)
-    scene bg_infinite_loop_quiz with fade
+    # Show the challenge background image
+    scene bg_maze_challenge_1 with fade
 
     # Display Harry to introduce the challenge
     show harry at left
@@ -90,8 +90,8 @@ label maze_challenge_2:
     if "maze_challenge_2" in completed_quizzes:
         return
 
-    # Show the quiz background image
-    scene bg_infinite_loop_quiz with fade
+    # Show the challenge background image
+    scene bg_maze_challenge_2 with fade
 
     # Display Harry to introduce the challenge with story context
     show kendall at right
@@ -180,8 +180,8 @@ label maze_challenge_3:
     if "maze_challenge_3" in completed_quizzes:
         return
 
-    # Show the quiz background image
-    scene bg_infinite_loop_quiz with fade
+    # Show the challenge background image
+    scene bg_maze_challenge_3 with fade
 
     # Display with story context
     show harry at left
