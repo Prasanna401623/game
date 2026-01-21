@@ -224,8 +224,8 @@ label logic_error_quiz:
     if "logic_error" in completed_quizzes:
         return
 
-    # Show the quiz background image (same as infinite loop for now)
-    scene bg_infinite_loop_quiz with fade
+    # Show the quiz background image
+    scene bg_logic_error_quiz with fade
 
     # Display Harry to ask the question
     show harry at left
@@ -304,8 +304,8 @@ label off_by_one_quiz:
     if "off_by_one" in completed_quizzes:
         return
 
-    # Show the quiz background image (same for now)
-    scene bg_infinite_loop_quiz with fade
+    # Show the quiz background image
+    scene bg_off_by_one_quiz with fade
 
     # Display Harry to ask the question
     show harry at left
@@ -384,8 +384,8 @@ label pre_test_logic_quiz:
     if "pre_test_logic" in completed_quizzes:
         return
 
-    # Show the quiz background image (same for now)
-    scene bg_infinite_loop_quiz with fade
+    # Show the quiz background image
+    scene bg_pre_test_logic_error with fade
 
     # Display Harry to ask the question
     show harry at left
