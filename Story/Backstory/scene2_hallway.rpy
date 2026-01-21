@@ -22,7 +22,7 @@ label hallway_scene:
     
     hide harry
     show kendall at right
-    kendall "Same here. Though, I’m hoping today won’t be too crazy. I need a break from all the brain-busting puzzles."
+    kendall "Same here. Though, I'm hoping today won't be too crazy. I need a break from these puzzles."
     
     hide kendall
     show harry at left
@@ -50,7 +50,7 @@ label hallway_scene:
 
     hide kendall
     show harry at left
-    harry "It’s not magic, Kendall. It’s just practice. Besides, Carter’s challenges are always fun if you think about them like solving a puzzle."
+    harry "It's not magic, Kendall. It's just practice. Besides, Carter's challenges are always fun."
 
     hide harry
     show kendall at right
@@ -66,7 +66,7 @@ label hallway_scene:
 
     # Transition to classroom
     hide kendall
-    "They reach the classroom door, the low murmur of students chatting inside spilling into the hallway."
+    "They reach the classroom door. Students are chatting inside."
 
     show kendall at right
     kendall "Here we go. Let’s see what Carter has up his sleeve today."
