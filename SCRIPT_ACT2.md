@@ -99,7 +99,7 @@ For starters, you might encounter an infinite loop if the condition is never upd
 **Characters:** Harry, Kendall  
 **Source File:** Story/Maze/scene5_insideTheMaze.rpy  
 
-**NOTE TO PROFESSOR:** The player can choose to learn about these errors in ANY order. All four error explanations are documented below in sequence.
+**NOTE:** The player can choose to learn about these errors in ANY order. All four error explanations are documented below in sequence.
 
 **[ERROR SELECTION MENU - Player chooses which error to learn about first]**
 
