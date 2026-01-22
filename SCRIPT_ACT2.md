@@ -134,39 +134,117 @@ You'll answer 4 questions, one for each error type we covered. Let's begin!
 **HARRY:**  
 What do you think? Choose the correct answer below.
 
-**[QUIZ QUESTION DISPLAYED ON SCREEN]**
-*(Player selects answer)*
+**[QUIZ QUESTION DISPLAYED: What is the output of this code?]**
+- It runs normally and stops after 5 iterations.
+- It will run forever. *(CORRECT)*
+- It won't run at all.
 
 **HARRY (if correct):**  
-*(Feedback varies based on answer)*
+Good job! The condition never changes, so the loop runs forever.
+
+**KENDALL:**  
+That makes sense! So we need to be careful about our loop conditions.
+
+**HARRY:**  
+Exactly! Now you know how to spot infinite loops.
+
+**KENDALL:**  
+I can't wait to learn more!
 
 **HARRY (if incorrect):**  
-Not quite. Think about when the loop should keep running.
-*(If two attempts) Remember what we learned about loop conditions.*
+Not quite. Think about whether the loop condition is ever updated.
+*(If 2+ attempts) Let me explain this concept again. [Returns to infinite_loop_error]*
+*(Option to try again or re-read about Infinite Loops)*
 
 ---
 
 #### QUIZ 2: LOGIC ERROR
 **Source File:** Story/Quizzes/quiz.rpy (label: logic_error_quiz)
 
-**[QUIZ QUESTION DISPLAYED ON SCREEN]**
-*(Player selects answer)*
+**HARRY:**  
+Here's a tricky one about logic errors. What do you think will happen?
+
+**[QUIZ QUESTION DISPLAYED: What happens when you run this code?]**
+- It never prints anything. *(CORRECT)*
+- It prints 'Found it!' 5 times.
+- It prints 'Found it!' once.
+
+**HARRY (if correct):**  
+Excellent! The condition 'count > 5' is never true because the loop stops at count < 5. That's a logic error.
+
+**KENDALL:**  
+Oh! So the logic is wrong, even though the code runs without crashing.
+
+**HARRY:**  
+Exactly! Logic errors are tricky because the code runs, but it doesn't do what you want.
+
+**KENDALL:**  
+I'll definitely watch out for those!
+
+**HARRY (if incorrect):**  
+Not quite. Look carefully at the condition inside the if statement compared to the while loop condition.
+*(If 2+ attempts) Let me explain logic errors again. [Returns to logic_error]*
+*(Option to try again or re-read about Logic Errors)*
 
 ---
 
 #### QUIZ 3: OFF-BY-ONE ERROR
 **Source File:** Story/Quizzes/quiz.rpy (label: off_by_one_quiz)
 
-**[QUIZ QUESTION DISPLAYED ON SCREEN]**
-*(Player selects answer)*
+**HARRY:**  
+Let's test your understanding of off-by-one errors!
+
+**[QUIZ QUESTION DISPLAYED: How many times does this loop print 'Hello'?]**
+- 6 times
+- 5 times
+- 4 times *(CORRECT)*
+
+**HARRY (if correct):**  
+Perfect! The loop runs while count < 5, so it stops before reaching 5. It prints 'Hello' 4 times (when count is 1, 2, 3, and 4).
+
+**KENDALL:**  
+So if we wanted it to print 5 times, we'd need to use count <= 5?
+
+**HARRY:**  
+Exactly! Just pay attention to < versus <=.
+
+**KENDALL:**  
+Got it! I'll be more careful with my loop conditions.
+
+**HARRY (if incorrect):**  
+Not quite. The loop uses < (less than), not <= (less than or equal to), so it stops before reaching 5.
+*(If 2+ attempts) Let me explain off-by-one errors again. [Returns to off_by_one_error]*
+*(Option to try again or re-read about Off-By-One Errors)*
 
 ---
 
 #### QUIZ 4: PRE-TEST LOGIC ERROR
 **Source File:** Story/Quizzes/quiz.rpy (label: pre_test_logic_quiz)
 
-**[QUIZ QUESTION DISPLAYED ON SCREEN]**
-*(Player selects answer)*
+**HARRY:**  
+One more! This is about pre-test logic errors.
+
+**[QUIZ QUESTION DISPLAYED: What is the output of this code?]**
+- It prints nothing *(CORRECT)*
+- It runs forever
+- It prints 10, 11, 12, 13, 14
+
+**HARRY (if correct):**  
+Correct! Since count starts at 10 and the condition is 'count < 5', the condition is false from the very beginning. The loop never runs!
+
+**KENDALL:**  
+So the pre-test checks the condition first, sees it's false, and skips the entire loop?
+
+**HARRY:**  
+Exactly! That's why they're called pre-test loops—they test the condition before running any code.
+
+**KENDALL:**  
+I need to make sure my starting values make sense with my loop conditions!
+
+**HARRY (if incorrect):**  
+Not quite. Remember, pre-test loops check the condition BEFORE running any code.
+*(If 2+ attempts) Let me explain pre-test logic errors again. [Returns to pre_test_logic_error]*
+*(Option to try again or re-read about Pre-Test Logic Errors)*
 
 ---
 

@@ -454,7 +454,7 @@ label wrong_answer_off_by_one:
         $ max_score += 1
         $ attempts += 1
         show harry at left
-        harry "Not quite. Remember, the loop runs while count is less than 5, not less than or equal to."
+        harry "Not quite. The loop uses < (less than), not <= (less than or equal to), so it stops before reaching 5."
 
         if attempts >= 2:
             harry "Let me explain off-by-one errors again."
