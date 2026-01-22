@@ -1,7 +1,9 @@
 # LOOPS - Game Script for Review
 
-## ACT 2: THE MAZE ADVENTURE
-**Files Covered:** scene4_mazeEntrance.rpy, scene5_insideTheMaze.rpy, scene5_mazeNavigation.rpy (quiz setup), quiz.rpy (quizzes), maze_challenges.rpy (enable phase), scene6_enablePhase.rpy (victory)
+## ACT 2: LEARNING ABOUT LOOPS AND ERRORS
+**Files Covered:** scene4_mazeEntrance.rpy, scene5_insideTheMaze.rpy, infinite_loop_error.rpy, logic_error.rpy, off_by_one_error.rpy, pre_test_logic_error.rpy
+
+**NOTE:** During Scene 2.3, the player can choose to learn about errors in ANY order. All four error explanations are documented here in sequence for completeness.
 
 ---
 
@@ -92,343 +94,204 @@ Problems? What kind of problems?
 **HARRY:**  
 For starters, you might encounter an infinite loop if the condition is never updated or if there's a mistake in your logic. But that's not the only type of issue. There are others, too.
 
----
-
-### SCENE 2.3: Learning About Errors
+--- - Introduction
 **Location:** Maze Interior (continuing from previous scene)  
 **Characters:** Harry, Kendall  
 **Source File:** Story/Maze/scene5_insideTheMaze.rpy  
-**NOTE:** This section is NON-CHRONOLOGICAL - player can choose any error to study first
 
-**[ERROR SELECTION MENU - Player chooses which error to learn about]**
-- Infinite Loop Error
-- Logic Error
-- Off-By-One Error
-- Pre-Test Logic Error
+**NOTE TO PROFESSOR:** The player can choose to learn about these errors in ANY order. All four error explanations are documented below in sequence.
 
-*(The player will go through all four errors in any order they choose. See APPENDIX A for full error explanations - not part of chronological narrative)*
+**[ERROR SELECTION MENU - Player chooses which error to learn about first]**
 
 ---
 
-### SCENE 2.4: Quiz Time - Testing Knowledge
+### SCENE 2.3A: INFINITE LOOP ERROR
 **Location:** Maze Interior  
-**Characters:** Harry, Kendall  
-**Source File:** Story/Quizzes/quiz.rpy
-
-*(After all errors have been learned)*
-
-**HARRY:**  
-Great work learning about all those errors! Now let's see how well you understood them.
-
-**KENDALL:**  
-Quiz time? I think I'm ready!
-
-**HARRY:**  
-You'll answer 4 questions, one for each error type we covered. Let's begin!
-
----
-
-#### QUIZ 1: INFINITE LOOP
-**Source File:** Story/Quizzes/quiz.rpy (label: infinite_loop_quiz)
-
-**HARRY:**  
-What do you think? Choose the correct answer below.
-
-**[QUIZ QUESTION DISPLAYED: What is the output of this code?]**
-- It runs normally and stops after 5 iterations.
-- It will run forever. *(CORRECT)*
-- It won't run at all.
-
-**HARRY (if correct):**  
-Good job! The condition never changes, so the loop runs forever.
-
-**KENDALL:**  
-That makes sense! So we need to be careful about our loop conditions.
-
-**HARRY:**  
-Exactly! Now you know how to spot infinite loops.
-
-**KENDALL:**  
-I can't wait to learn more!
-
-**HARRY (if incorrect):**  
-Not quite. Think about whether the loop condition is ever updated.
-*(If 2+ attempts) Let me explain this concept again. [Returns to infinite_loop_error]*
-*(Option to try again or re-read about Infinite Loops)*
-
----
-
-#### QUIZ 2: LOGIC ERROR
-**Source File:** Story/Quizzes/quiz.rpy (label: logic_error_quiz)
-
-**HARRY:**  
-Here's a tricky one about logic errors. What do you think will happen?
-
-**[QUIZ QUESTION DISPLAYED: What happens when you run this code?]**
-- It never prints anything. *(CORRECT)*
-- It prints 'Found it!' 5 times.
-- It prints 'Found it!' once.
-
-**HARRY (if correct):**  
-Excellent! The condition 'count > 5' is never true because the loop stops at count < 5. That's a logic error.
-
-**KENDALL:**  
-Oh! So the logic is wrong, even though the code runs without crashing.
-
-**HARRY:**  
-Exactly! Logic errors are tricky because the code runs, but it doesn't do what you want.
-
-**KENDALL:**  
-I'll definitely watch out for those!
-
-**HARRY (if incorrect):**  
-Not quite. Look carefully at the condition inside the if statement compared to the while loop condition.
-*(If 2+ attempts) Let me explain logic errors again. [Returns to logic_error]*
-*(Option to try again or re-read about Logic Errors)*
-
----
-
-#### QUIZ 3: OFF-BY-ONE ERROR
-**Source File:** Story/Quizzes/quiz.rpy (label: off_by_one_quiz)
-
-**HARRY:**  
-Let's test your understanding of off-by-one errors!
-
-**[QUIZ QUESTION DISPLAYED: How many times does this loop print 'Hello'?]**
-- 6 times
-- 5 times
-- 4 times *(CORRECT)*
-
-**HARRY (if correct):**  
-Perfect! The loop runs while count < 5, so it stops before reaching 5. It prints 'Hello' 4 times (when count is 1, 2, 3, and 4).
-
-**KENDALL:**  
-So if we wanted it to print 5 times, we'd need to use count <= 5?
-
-**HARRY:**  
-Exactly! Just pay attention to < versus <=.
-
-**KENDALL:**  
-Got it! I'll be more careful with my loop conditions.
-
-**HARRY (if incorrect):**  
-Not quite. The loop uses < (less than), not <= (less than or equal to), so it stops before reaching 5.
-*(If 2+ attempts) Let me explain off-by-one errors again. [Returns to off_by_one_error]*
-*(Option to try again or re-read about Off-By-One Errors)*
-
----
-
-#### QUIZ 4: PRE-TEST LOGIC ERROR
-**Source File:** Story/Quizzes/quiz.rpy (label: pre_test_logic_quiz)
-
-**HARRY:**  
-One more! This is about pre-test logic errors.
-
-**[QUIZ QUESTION DISPLAYED: What is the output of this code?]**
-- It prints nothing *(CORRECT)*
-- It runs forever
-- It prints 10, 11, 12, 13, 14
-
-**HARRY (if correct):**  
-Correct! Since count starts at 10 and the condition is 'count < 5', the condition is false from the very beginning. The loop never runs!
-
-**KENDALL:**  
-So the pre-test checks the condition first, sees it's false, and skips the entire loop?
-
-**HARRY:**  
-Exactly! That's why they're called pre-test loops—they test the condition before running any code.
-
-**KENDALL:**  
-I need to make sure my starting values make sense with my loop conditions!
-
-**HARRY (if incorrect):**  
-Not quite. Remember, pre-test loops check the condition BEFORE running any code.
-*(If 2+ attempts) Let me explain pre-test logic errors again. [Returns to pre_test_logic_error]*
-*(Option to try again or re-read about Pre-Test Logic Errors)*
-
----
-
-**HARRY:**  
-You've completed all the quizzes! Let me show you your final score.
-
-**[FINAL SCORE DISPLAYED]**
-*(3 second pause)*
-
----
-
-### SCENE 2.5: Enable Phase - Time to Navigate!
-**Location:** Maze Interior  
-**Characters:** Harry, Kendall  
-**Source File:** Story/Maze/scene6_enablePhase.rpy
-
-**KENDALL:**  
-Okay, we've studied all the errors. But we're still stuck in this maze!
-
-**HARRY:**  
-You're right. The knowledge was important, but now we need to actually use it to get out of here.
-
-**KENDALL:**  
-So... we need to write the actual code to navigate through?
-
-**HARRY:**  
-Exactly! I'll help guide you, but you'll need to make the decisions yourself. Think of it like... I'm your code reviewer, but you're the programmer.
-
-**KENDALL:**  
-No pressure, right? Okay, I can do this. Let's start!
-
----
-
-#### CHALLENGE 1: Navigate the Maze (Loop Condition)
-**Source File:** Story/Quizzes/maze_challenges.rpy (label: maze_challenge_1)
-
-**HARRY:**  
-Alright, we're at our first junction. I've got the basic navigation code here. But I need you to tell me—what condition should keep us moving?
-
-**[CHALLENGE 1 QUESTION: Choose the correct loop condition]**
-- Option A: while True
-- Option B: while at_exit
-- Option C: while not at_exit *(CORRECT)*
-
-**HARRY (if correct):**  
-Perfect! The loop should continue while we're NOT at the exit. Great job!
-
-**KENDALL:**  
-That makes sense! We keep going until we reach the exit.
-
-**HARRY:**  
-Exactly! Let's move forward.
-
-**HARRY (if incorrect):**  
-Not quite. Think about when the loop should keep running.
-*(If 2+ attempts) Remember what we learned about loop conditions.*
-
----
-
-#### CHALLENGE 2: Prevent Infinite Loop (Add Safety Counter)
-**Source File:** Story/Quizzes/maze_challenges.rpy (label: maze_challenge_2)
-
-**KENDALL:**  
-Great! That worked! But... what if the maze has a glitch or something? Couldn't we get stuck in an infinite loop?
-
-**HARRY:**  
-Good thinking! We should add a safety measure. What's the best way to write this loop condition?
-
-**[CHALLENGE 2 QUESTION: What's the safest loop condition?]**
-- Option A: while not at_exit and steps < 100 *(CORRECT)*
-- Option B: while steps < 100
-- Option C: while not at_exit
-
-**HARRY (if correct):**  
-Excellent! Adding a step counter prevents infinite loops while still checking for the exit.
-
-**KENDALL:**  
-So we check both conditions—not at exit AND haven't exceeded max steps!
-
-**HARRY:**  
-Exactly! That's how you write safe loops.
-
-**HARRY (if partial answer - option C):**  
-That works, but what if the maze has a bug? We might get stuck in an infinite loop! Think about what we learned about preventing infinite loops.
-*(If 2+ attempts) Remember, we should add a safety counter to prevent infinite loops.*
-
-**HARRY (if wrong answer):**  
-That's not quite right. We still need to check if we've reached the exit!
-*(If 2+ attempts) We need BOTH conditions: checking for the exit AND limiting the steps.*
-
----
-
-#### CHALLENGE 3: Fix Off-By-One Error (Path Counting)
-**Source File:** Story/Quizzes/maze_challenges.rpy (label: maze_challenge_3)
-
-**HARRY:**  
-We're getting close! I can see the exit, but there are 5 different paths ahead.
-
-**KENDALL:**  
-So we need to check all 5 paths, numbered 1 through 5?
-
-**HARRY:**  
-Exactly. Which loop condition will check all 5 without missing any?
-
-**[CHALLENGE 3 QUESTION DISPLAYED ON SCREEN]**
-*(Player selects answer)*
-
-**HARRY (if correct):**  
-*(Feedback)*
-
----
-
-### SCENE 2.6: Victory - Escape from the Maze
-**Location:** Maze Interior → Maze Entrance → Victory Scene  
 **Characters:** Harry, Kendall, Narrator  
-**Source File:** Story/Maze/scene6_enablePhase.rpy (label: maze_victory)
+**Source File:** Story/Errors/infinite_loop_error.rpy
 
 **HARRY:**  
-Amazing work, Kendall! You've completed all the challenges!
+An infinite loop happens when the condition for the loop never becomes false. In simple terms, it just keeps going forever.
 
 **KENDALL:**  
-I did it! I can't believe I actually solved them all!
+Forever? That sounds... bad. What would cause that to happen?
 
 **HARRY:**  
-You understood loops perfectly. Now let's get out of this maze!
+Let's say you write a loop but forget to update the condition inside it.
+
+*(Scene transition to code example screen - bg_infinite_loop_code1)*
 
 **NARRATOR:**  
-The maze walls begin to shift and glow. A clear path forward appears, lit up in blue.
-
-*(Scene transition)*
-
-**NARRATOR:**  
-Harry and Kendall rush through the glowing pathway, their footsteps echoing through the corridors.
-
-*(Scene transition to victory background)*
-
-**KENDALL:**  
-We made it! We escaped the maze!
+Harry points to the screen where the incorrect code is displayed.
 
 **HARRY:**  
-You escaped the maze, Kendall. And you've got pre-test loops down now!
+This kind of loop has no condition to stop, so it keeps running endlessly.
 
 **KENDALL:**  
-Thanks to your teaching! I feel like I can tackle any loop now.
+So, the loop keeps asking the same question, but there's no way to change the answer?
 
 **HARRY:**  
-That's the spirit! Remember: always check your conditions, watch for infinite loops, and pay attention to your boundaries.
+Exactly. Think of it like someone repeatedly asking, 'Is it raining?' when they're inside and can't check. To fix it, you need to make sure the loop's condition changes. For example, by updating a variable or checking a new value inside the loop.
 
-**KENDALL:**  
-Got it! I'm ready for the next challenge!
-
-**[FINAL SCORE DISPLAYED]**
-*(4 second pause)*
+*(Scene transition to corrected code screen - bg_infinite_loop_code2)*
 
 **NARRATOR:**  
-Congratulations! You've completed 'Escape the Virtual Maze'! You've learned about pre-test loops, common errors, and how to fix them. Keep practicing!
+Harry shows the corrected version of the code.
+
+**HARRY:**  
+Here, we update the variable `count` in each iteration, so the condition eventually becomes false, and the loop stops.
+
+**KENDALL:**  
+Got it! So, as long as we update the condition properly, the loop will end when it's supposed to.
+
+*(Scene transition back to maze interior)*
+
+**[Returns to error selection menu]**
+
+---
+
+### SCENE 2.3B: LOGIC ERROR
+**Location:** Maze Interior  
+**Characters:** Harry, Kendall, Narrator  
+**Source File:** Story/Errors/logic_error.rpy
+
+**HARRY:**  
+Logic errors are trickier. They don't break your code outright, but they make it behave in ways you didn't intend.
+
+**KENDALL:**  
+So, the loop works, but it's doing the wrong thing?
+
+**HARRY:**  
+Exactly. Let's say you want to check numbers greater than 5, but you accidentally write it to check numbers greater than 6. It doesn't crash, but it skips the range you wanted to include.
+
+*(Scene transition to code example screen - bg_logic_error_code1)*
+
+**NARRATOR:**  
+Harry points to the screen where the incorrect code is displayed.
+
+**KENDALL:**  
+That's tricky. It looks fine at first, but the result is wrong. How would I catch something like this?
+
+**HARRY:**  
+That's the problem with logic errors—they don't cause crashes. You'd need to test your code carefully and compare the output to what you expect.
+
+*(Scene transition to corrected code screen - bg_logic_error_code2)*
+
+**NARRATOR:**  
+Harry shows the corrected version of the code.
+
+**HARRY:**  
+Here's the fixed version. Now the loop checks for numbers greater than 5 as intended, so you get the correct result.
+
+**KENDALL:**  
+So, the key is testing the code and double-checking the logic carefully, right?
+
+**HARRY:**  
+Exactly. With careful testing and attention to detail, you can catch logic errors before they cause trouble.
+
+*(Scene transition back to maze interior)*
+
+**[Returns to error selection menu]**
+
+---
+
+### SCENE 2.3C: OFF-BY-ONE ERROR
+**Location:** Maze Interior  
+**Characters:** Harry, Kendall, Narrator  
+**Source File:** Story/Errors/off_by_one_error.rpy
+
+**HARRY:**  
+An off-by-one error happens when the loop iterates one time too many or one time too few. It's one of the most common errors in coding.
+
+**KENDALL:**  
+So, the loop works, but it doesn't cover all the cases? Like it skips something or stops too early?
+
+**HARRY:**  
+Exactly. Let me show you an example where we want to count up to 5, but the loop stops too early.
+
+*(Scene transition to code example screen - bg_off_by_one_code1)*
+
+**NARRATOR:**  
+Harry points to the screen where the incorrect code is displayed.
+
+**HARRY:**  
+In this code, the condition says 'count < 5', so the loop stops before reaching 5. The 'if' statement inside the loop checks if the number is 5, but it never prints 'True' because 5 isn't included.
+
+**KENDALL:**  
+Oh, I see! The loop condition makes it stop before 5, so it misses the chance to print 'True'.
+
+**HARRY:**  
+Exactly! Now let me show you how to fix it by updating the loop condition.
+
+*(Scene transition to corrected code screen - bg_off_by_one_code2)*
+
+**NARRATOR:**  
+Harry shows the corrected version of the code.
+
+**HARRY:**  
+Here's the corrected version. By changing the condition to 'count <= 5', the loop includes 5. Now it prints 'True' when the count reaches 5.
+
+**KENDALL:**  
+So, I just need to carefully check the loop conditions to make sure it does what I expect. Got it.
+
+**HARRY:**  
+Exactly! Paying attention to loop conditions will help you avoid off-by-one errors and other tricky mistakes.
+
+*(Scene transition back to maze interior)*
+
+**[Returns to error selection menu]**
+
+---
+
+### SCENE 2.3D: PRE-TEST LOGIC ERROR
+**Location:** Maze Interior  
+**Characters:** Harry, Kendall, Narrator  
+**Source File:** Story/Errors/pre_test_logic_error.rpy
+
+**HARRY:**  
+A pre-test logic error happens when the condition of the loop is false from the very beginning. This means the loop doesn't run at all.
+
+**KENDALL:**  
+So, even if the code is written correctly, the loop doesn't run because of the starting condition?
+
+**HARRY:**  
+Exactly. Let me show you an example where we set up a loop, but the starting condition makes it skip everything.
+
+*(Scene transition to code example screen - bg_pre_test_logic_error_code1)*
+
+**NARRATOR:**  
+Harry points to the screen where the incorrect code is displayed.
+
+**HARRY:**  
+In this code, the loop's condition is 'count < 1', but the starting value is 5. Since the condition is false from the start, the loop doesn't run.
+
+**KENDALL:**  
+Oh, I see! The loop doesn't even get a chance to start because the condition fails right away.
+
+**HARRY:**  
+Exactly! Now let me show you how to fix it by adjusting the starting value and condition.
+
+*(Scene transition to corrected code screen - bg_pre_test_logic_error_code2)*
+
+**NARRATOR:**  
+Harry shows the corrected version of the code.
+
+**HARRY:**  
+Here's the corrected version. By setting the starting value to 1 and the condition to 'count <= 5', the loop runs as expected and prints the numbers from 1 to 5.
+
+**KENDALL:**  
+So, I need to make sure the starting value and condition are aligned to allow the loop to run properly. Got it.
+
+**HARRY:**  
+Exactly! Setting the right initial value and condition is key to avoiding pre-test logic errors.
+
+*(Scene transition back to maze interior)*
+
+**[Returns to error selection menu until all 4 errors are completed]**
 
 ---
 
 **END OF ACT 2**
-**END OF GAME**
 
----
+*(After completing all four error explanations, the game continues to Act 3 with quizzes)*
 
-## APPENDIX A: ERROR EXPLANATIONS (NON-CHRONOLOGICAL)
-
-**NOTE TO PROFESSOR:** These error explanations are not part of the chronological narrative. The player can choose to learn about these errors in any order during Scene 2.3. Each error has its own detailed explanation scene with examples.
-
-### Error 1: Infinite Loop Error
-**Source File:** Story/Errors/infinite_loop_error.rpy  
-*(Full dialogue to be documented separately if needed)*
-
-### Error 2: Logic Error
-**Source File:** Story/Errors/logic_error.rpy  
-*(Full dialogue to be documented separately if needed)*
-
-### Error 3: Off-By-One Error
-**Source File:** Story/Errors/off_by_one_error.rpy  
-*(Full dialogue to be documented separately if needed)*
-
-### Error 4: Pre-Test Logic Error
-**Source File:** Story/Errors/pre_test_logic_error.rpy  
-*(Full dialogue to be documented separately if needed)*
-
----
-
-**NOTE:** Would you like me to create a separate document with the full error explanation dialogues from the Errors folder?
