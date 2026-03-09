@@ -1,7 +1,12 @@
 *.rpyc
 *.rpa
+*.rpyb
 saves/
+cache/
 tl/
 .vscode/
 .DS_Store
 Thumbs.db
+log.txt
+errors.txt
+traceback.txt
