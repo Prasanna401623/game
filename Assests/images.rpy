@@ -1,7 +1,7 @@
 # Define background images
 image school_background = im.Scale("../images/backgrounds/school.png", config.screen_width, config.screen_height)
 image hallway_background = im.Scale("../images/backgrounds/hallway.png", config.screen_width, config.screen_height)
-image classroom_background = im.Scale("../images/backgrounds/classroom.webp", config.screen_width, config.screen_height)
+image classroom_background = im.Scale("../images/backgrounds/classroom.png", config.screen_width, config.screen_height)
 image bg_maze = im.Scale("../images/backgrounds/maze.webp", config.screen_width, config.screen_height)
 image bg_maze_interior = im.Scale("../images/backgrounds/mazeWithArrow.webp", config.screen_width, config.screen_height)
 image bg_maze_example_ipad = im.Scale("../images/InsideTheMaze/mazeExample.png", config.screen_width, config.screen_height)

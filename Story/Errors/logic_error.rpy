@@ -14,7 +14,7 @@ label logic_error:
     # Harry elaborates
     hide kendall
     show harry at left
-    harry "Exactly. Let’s say you want to check numbers greater than 5, but you accidentally write it to check numbers greater than 6."
+    harry "Exactly. Let’s say you want to check numbers equal to or greater than 5, but you accidentally write it to check numbers just greater than 5."
     harry "It doesn’t crash, but it skips the range you wanted to include."
 
     # Show the first code snippet as background
@@ -35,7 +35,7 @@ label logic_error:
     "Harry shows the corrected version of the code."
 
     # Harry explains the fix
-    harry "Here’s the fixed version. Now the loop checks for numbers greater than 5 as intended, so you get the correct result."
+    harry "Here’s the fixed version. Now the loop checks for numbers equal to orgreater than 5 as intended, so you get the correct result."
 
     # Kendall reflects
     hide harry
