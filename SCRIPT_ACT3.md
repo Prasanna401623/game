@@ -299,3 +299,14 @@ Congratulations! You've completed 'Escape the Virtual Maze'! You've learned abou
 **END OF ACT 3**
 **END OF GAME**
 
+
+
+Edits made v1: 
+
+1. Added the image of full of students in Scene
+2. Cleared the confusion about Narrator. Narrator is only used in paper script, not on visual novel.
+3. Fixed the position of Kendall in scene 2.2
+4. Again in scene 2.2, used "on my ipad" instead of "using my ipad"
+5. Added another infinite loop error code
+6. In scene 2.3B, clarified the problem statemen
+7. Use of printf is correct.

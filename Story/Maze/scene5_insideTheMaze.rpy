@@ -25,7 +25,7 @@ label inside_maze:
 
     hide kendall
     show harry at left
-    harry "Exactly. Wait a second. Let me show you from my iPad."
+    harry "Exactly. Wait a second. Let me show you on my iPad."
 
     # Harry takes out his iPad
     hide harry
@@ -37,7 +37,7 @@ label inside_maze:
     "A simple maze with multiple paths is displayed on the screen. "
 
     # Switch back to Kendall's voice
-    show kendall at left
+    show kendall at right
     kendall "That's what we're stuck in?"
 
     # Switch to Harry

@@ -47,7 +47,7 @@ It's definitely more than just a puzzle. But I think I can show you how we can s
 Systematically? How?
 
 **HARRY:**  
-Exactly. Wait a second. Let me show you from my iPad.
+Exactly. Wait a second. Let me show you on my iPad.
 
 **NARRATOR:**  
 Harry pulls out his iPad. The screen lights up, showing an overhead view of simple maze.

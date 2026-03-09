@@ -4,6 +4,7 @@
 **Files Covered:** scene1_school.rpy, scene2_hallway.rpy, scene3_classroom.rpy
 
 ---
+**NARRATO** is just used in the script so that helps reader to differentiate who is speaking. In the visual novel, we don't explicitly mention narrator.
 
 ### SCENE 1.1: Outside the School
 **Location:** School Building, Morning  
