@@ -19,7 +19,7 @@ label enable_phase:
     
     hide kendall
     show harry at left
-    harry "Exactly! I'll help guide you, but you'll need to make the decisions yourself."
+    harry "That's right! I'll help guide you, but you'll need to make the decisions yourself."
     harry "Think of it like... I'm your code reviewer, but you're the programmer."
     
     hide harry
@@ -104,8 +104,6 @@ label maze_victory:
     hide harry
     hide kendall
     
-    # Game complete
-    return
-    
-    # Game complete
+    # Game complete. This returns to script.rpy's start label, which returns
+    # again with an empty call stack, ending the game.
     return

@@ -14,7 +14,7 @@ label pre_test_logic_error:
     # Harry elaborates
     hide kendall
     show harry at left
-    harry "Exactly. Let me show you an example where we set up a loop, but the starting condition makes it skip everything."
+    harry "Afraid so. Let me show you an example where we set up a loop, but the starting condition makes it skip everything."
 
     # Show the first code snippet (incorrect) as background
     scene bg_pre_test_logic_error_code1 with dissolve
@@ -31,7 +31,7 @@ label pre_test_logic_error:
     # Harry explains further
     hide kendall
     show harry at left
-    harry "Exactly! Now let me show you how to fix it by adjusting the starting value and condition."
+    harry "Now you’re seeing it! Let me show you how to fix it by adjusting the starting value and condition."
 
     # Show the fixed code as background
     scene bg_pre_test_logic_error_code2 with dissolve
@@ -48,11 +48,10 @@ label pre_test_logic_error:
     # Harry confirms
     hide kendall
     show harry at left
-    harry "Exactly! Setting the right initial value and condition is key to avoiding pre-test logic errors."
+    harry "Precisely. Setting the right initial value and condition is key to avoiding pre-test logic errors."
 
     hide harry
     scene bg_maze_interior with dissolve
 
-    jump choose_error
-
+    # Return to whoever called this lesson (the error menu, or a quiz retry)
     return

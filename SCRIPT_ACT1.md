@@ -97,7 +97,7 @@ Alright, class, settle down. Today, we're diving into something exciting. A chal
 I knew it! Another one of Carter's challenges. I can't wait!
 
 **KENDALL:**  
-I'm not so sure about this. Recursion last week was tough enough. What's it going to be this time?
+I'm not so sure about this. I was hoping for one easy week. What's it going to be this time?
 
 **PROFESSOR CARTER:**  
 Loops! Specifically, pre-test loops. And to make it more interesting, you'll be solving a virtual maze.

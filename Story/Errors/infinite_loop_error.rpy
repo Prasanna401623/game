@@ -50,6 +50,5 @@ label infinite_loop_error:
     scene bg_maze_interior with dissolve
 
 
-    jump choose_error
-
+    # Return to whoever called this lesson (the error menu, or a quiz retry)
     return

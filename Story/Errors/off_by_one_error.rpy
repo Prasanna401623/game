@@ -14,7 +14,7 @@ label off_by_one_error:
     # Harry elaborates
     hide kendall
     show harry at left
-    harry "Exactly. Let me show you an example where we want to count up to 5, but the loop stops too early."
+    harry "That’s it. Let me show you an example where we want to count up to 5, but the loop stops too early."
 
     # Show the first code snippet (incorrect) as background
     scene bg_off_by_one_code1 with dissolve
@@ -31,7 +31,7 @@ label off_by_one_error:
     # Harry explains further
     hide kendall
     show harry at left
-    harry "Exactly! Now let me show you how to fix it by updating the loop condition."
+    harry "You’ve got it! Now let me show you how to fix it by updating the loop condition."
 
     # Show the fixed code as background
     scene bg_off_by_one_code2 with dissolve
@@ -48,11 +48,10 @@ label off_by_one_error:
     # Harry confirms
     hide kendall
     show harry at left
-    harry "Exactly! Paying attention to loop conditions will help you avoid off-by-one errors and other tricky mistakes."
+    harry "That’s the whole trick. Paying attention to loop conditions will help you avoid off-by-one errors and other tricky mistakes."
 
     hide harry
     scene bg_maze_interior with dissolve
 
-    jump choose_error
-
+    # Return to whoever called this lesson (the error menu, or a quiz retry)
     return

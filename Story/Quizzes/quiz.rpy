@@ -70,6 +70,7 @@ init python:
     max_score = 0
     attempts = 0
     completed_quizzes = set()  # Track which quizzes have been completed
+    missed_questions = set()  # Questions missed at least once; they score 0
     current_question = 0  # Track question numbers across all branches
 
 # Define styles for all quizzes
@@ -268,8 +269,9 @@ screen infinite_loop_quiz_screen():
 # Correct Answer
 label correct_answer_infinite:
     if "infinite_loop" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "infinite_loop" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("infinite_loop")
         show harry at left
         harry "Good job! The condition never changes, so the loop runs forever."
@@ -281,7 +283,7 @@ label correct_answer_infinite:
         
         hide kendall
         show harry at left
-        harry "Exactly! Now you know how to spot infinite loops."
+        harry "That's the idea. Now you know how to spot infinite loops."
         
         hide harry
         show kendall at right
@@ -291,7 +293,7 @@ label correct_answer_infinite:
 # Wrong Answer
 label wrong_answer_infinite:
     if "infinite_loop" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("infinite_loop")
         $ attempts += 1
         show harry at left
         harry "Not quite. Think about whether the loop condition is ever updated."
@@ -299,13 +301,15 @@ label wrong_answer_infinite:
         if attempts >= 2:
             harry "Let me explain this concept again."
             $ attempts = 0
-            jump infinite_loop_error
+            call infinite_loop_error
+            jump infinite_loop_quiz
         else:
             menu:
                 "Try again":
                     jump infinite_loop_quiz
                 "Re-read about Infinite Loops":
-                    jump infinite_loop_error
+                    call infinite_loop_error
+                    jump infinite_loop_quiz
     return
 
 
@@ -348,8 +352,9 @@ screen logic_error_quiz_screen():
 # Correct Answer for Logic Error
 label correct_answer_logic:
     if "logic_error" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "logic_error" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("logic_error")
         show harry at left
         harry "Excellent! The condition 'count > 5' is never true because the loop stops at count < 5. That's a logic error."
@@ -371,7 +376,7 @@ label correct_answer_logic:
 # Wrong Answer for Logic Error
 label wrong_answer_logic:
     if "logic_error" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("logic_error")
         $ attempts += 1
         show harry at left
         harry "Not quite. Look carefully at the condition inside the if statement compared to the while loop condition."
@@ -379,13 +384,15 @@ label wrong_answer_logic:
         if attempts >= 2:
             harry "Let me explain logic errors again."
             $ attempts = 0
-            jump logic_error
+            call logic_error
+            jump logic_error_quiz
         else:
             menu:
                 "Try again":
                     jump logic_error_quiz
                 "Re-read about Logic Errors":
-                    jump logic_error
+                    call logic_error
+                    jump logic_error_quiz
     return
 
 
@@ -419,8 +426,8 @@ screen off_by_one_quiz_screen():
         question="Question 3: How many times does this loop print 'Hello'?",
         options=[
             ("6 times", Jump("wrong_answer_off_by_one")),
-            ("5 times", Jump("wrong_answer_off_by_one")),
-            ("4 times", Jump("correct_answer_off_by_one"))
+            ("5 times", Jump("correct_answer_off_by_one")),
+            ("4 times", Jump("wrong_answer_off_by_one"))
         ],
         question_number=current_question
     )
@@ -428,44 +435,47 @@ screen off_by_one_quiz_screen():
 # Correct Answer for Off-By-One Error
 label correct_answer_off_by_one:
     if "off_by_one" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "off_by_one" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("off_by_one")
         show harry at left
-        harry "Perfect! The loop runs while count < 5, so it stops before reaching 5. It prints 'Hello' 4 times (when count is 1, 2, 3, and 4)."
-        
+        harry "Perfect! Count starts at 0, so the loop runs for 0, 1, 2, 3, and 4. That's 'Hello' five times before the condition fails."
+
         # Add short conversation
         hide harry
         show kendall at right
-        kendall "So if we wanted it to print 5 times, we'd need to use count <= 5?"
-        
+        kendall "I almost said 4. I assumed it started counting at 1."
+
         hide kendall
         show harry at left
-        harry "Exactly! Just pay attention to < versus <=."
-        
+        harry "And that's the trap. Off-by-one errors come from the starting value just as often as from the condition."
+
         hide harry
         show kendall at right
-        kendall "Got it! I'll be more careful with my loop conditions."
+        kendall "Got it! I'll check both ends before I trust a loop."
     return
 
 # Wrong Answer for Off-By-One Error
 label wrong_answer_off_by_one:
     if "off_by_one" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("off_by_one")
         $ attempts += 1
         show harry at left
-        harry "Not quite. The loop uses < (less than), not <= (less than or equal to), so it stops before reaching 5."
+        harry "Not quite. Trace it carefully: count starts at 0, and the loop runs while count < 5. That's 0, 1, 2, 3, and 4."
 
         if attempts >= 2:
             harry "Let me explain off-by-one errors again."
             $ attempts = 0
-            jump off_by_one_error
+            call off_by_one_error
+            jump off_by_one_quiz
         else:
             menu:
                 "Try again":
                     jump off_by_one_quiz
                 "Re-read about Off-By-One Errors":
-                    jump off_by_one_error
+                    call off_by_one_error
+                    jump off_by_one_quiz
     return
 
 
@@ -508,8 +518,9 @@ screen pre_test_logic_quiz_screen():
 # Correct Answer for Pre-Test Logic Error
 label correct_answer_pre_test:
     if "pre_test_logic" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "pre_test_logic" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("pre_test_logic")
         show harry at left
         harry "Correct! Since count starts at 10 and the condition is 'count < 5', the condition is false from the very beginning. The loop never runs!"
@@ -531,7 +542,7 @@ label correct_answer_pre_test:
 # Wrong Answer for Pre-Test Logic Error
 label wrong_answer_pre_test:
     if "pre_test_logic" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("pre_test_logic")
         $ attempts += 1
         show harry at left
         harry "Not quite. Remember, pre-test loops check the condition BEFORE running any code."
@@ -539,12 +550,14 @@ label wrong_answer_pre_test:
         if attempts >= 2:
             harry "Let me explain pre-test logic errors again."
             $ attempts = 0
-            jump pre_test_logic_error
+            call pre_test_logic_error
+            jump pre_test_logic_quiz
         else:
             menu:
                 "Try again":
                     jump pre_test_logic_quiz
                 "Re-read about Pre-Test Logic Errors":
-                    jump pre_test_logic_error
+                    call pre_test_logic_error
+                    jump pre_test_logic_quiz
     return
 

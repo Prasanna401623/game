@@ -18,19 +18,19 @@ label inside_maze:
     show harry at left
     harry "It's definitely more than just a puzzle. But I think I can show you how we can solve it systematically."
 
-    # Harry takes out his iPad
+    # Harry takes out his tablet
     hide harry
     show kendall at right
     kendall "Systematically? How?"
 
     hide kendall
     show harry at left
-    harry "Exactly. Wait a second. Let me show you on my iPad."
+    harry "Let me show you. Wait a second. I'll pull it up on my tablet."
 
-    # Harry takes out his iPad
+    # Harry takes out his tablet
     hide harry
     scene bg_ipad_black with dissolve
-    "Harry pulls out his iPad. The screen lights up, showing an overhead view of simple maze."
+    "Harry pulls out his tablet. The screen lights up, showing an overhead view of simple maze."
 
     # Display the maze image
     scene bg_maze_example_ipad with fade
@@ -54,7 +54,7 @@ label inside_maze:
 
     # Show the highlighted path animation (description)
     scene maze_iPad_solveSimpleMaze with dissolve
-    "Harry writes a code in his iPad. The code is an example of loop using while statement."
+    "Harry writes a code on his tablet. The code is an example of loop using while statement."
 
     # Narration: Code explanation
     "Harry points to the screen. 'This loop checks each path. If it leads to the exit, it stops. If not, it moves to the next path.'"
@@ -74,7 +74,7 @@ label inside_maze:
     # Transition back to the maze
     hide harry
     scene bg_maze_interior with dissolve
-    "Harry switches off his iPad and puts it away."
+    "Harry switches off his tablet and puts it away."
 
         # Harry starts the conversation about errors
     show harry at left
@@ -100,15 +100,16 @@ label choose_error:
         # Remove the selected error from the list
         $ remove_error(choice)
 
-        # Jump to the corresponding error explanation
+        # Call the matching error explanation. Each one returns here when it
+        # finishes, so the loop can offer the remaining errors.
         if choice == "Infinite Loop":
-            jump infinite_loop_error
+            call infinite_loop_error
         elif choice == "Logic Error":
-            jump logic_error
+            call logic_error
         elif choice == "Off-By-One Error":
-            jump off_by_one_error
+            call off_by_one_error
         elif choice == "Pre-Test Logic Error":
-            jump pre_test_logic_error
+            call pre_test_logic_error
 
     jump all_errors_done  # Once all errors are covered, continue the game
 

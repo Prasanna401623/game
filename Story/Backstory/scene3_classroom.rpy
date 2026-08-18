@@ -19,7 +19,7 @@ label classroom_scene:
 
     hide harry
     show kendall at right
-    kendall "I’m not so sure about this. Recursion last week was tough enough. What’s it going to be this time?"
+    kendall "I’m not so sure about this. I was hoping for one easy week. What’s it going to be this time?"
 
     hide kendall
     show professor_carter at center

@@ -47,12 +47,12 @@ It's definitely more than just a puzzle. But I think I can show you how we can s
 Systematically? How?
 
 **HARRY:**  
-Exactly. Wait a second. Let me show you on my iPad.
+Let me show you. Wait a second. I'll pull it up on my tablet.
 
 **NARRATOR:**  
-Harry pulls out his iPad. The screen lights up, showing an overhead view of simple maze.
+Harry pulls out his tablet. The screen lights up, showing an overhead view of simple maze.
 
-*(Scene transition to iPad display)*
+*(Scene transition to tablet display)*
 
 **NARRATOR:**  
 A simple maze with multiple paths is displayed on the screen.
@@ -66,10 +66,10 @@ No, this is an example of a simple maze. We can solve this maze easily in our mi
 **KENDALL:**  
 Okay, I'm listening.
 
-*(Harry writes code on iPad)*
+*(Harry writes code on tablet)*
 
 **NARRATOR:**  
-Harry writes a code in his iPad. The code is an example of loop using while statement.
+Harry writes a code on his tablet. The code is an example of loop using while statement.
 
 **NARRATOR:**  
 Harry points to the screen. 'This loop checks each path. If it leads to the exit, it stops. If not, it moves to the next path.'
@@ -83,7 +83,7 @@ Exactly. Initially it first path is checked. If it doesn't lead to the exit, it 
 *(Scene transition back to maze interior)*
 
 **NARRATOR:**  
-Harry switches off his iPad and puts it away.
+Harry switches off his tablet and puts it away.
 
 **HARRY:**  
 Now that you've seen how a loop works, there's something else you should know. Loops can run into problems. Let me give you some examples.
@@ -162,7 +162,7 @@ Logic errors are trickier. They don't break your code outright, but they make it
 So, the loop works, but it's doing the wrong thing?
 
 **HARRY:**  
-Exactly. Let's say you want to check numbers greater than 5, but you accidentally write it to check numbers greater than 6. It doesn't crash, but it skips the range you wanted to include.
+Right. Let's say you want to check numbers equal to or greater than 5, but you accidentally write it to check numbers just greater than 5. It doesn't crash, but it skips the range you wanted to include.
 
 *(Scene transition to code example screen - bg_logic_error_code1)*
 
@@ -181,13 +181,13 @@ That's the problem with logic errors—they don't cause crashes. You'd need to t
 Harry shows the corrected version of the code.
 
 **HARRY:**  
-Here's the fixed version. Now the loop checks for numbers greater than 5 as intended, so you get the correct result.
+Here's the fixed version. Now the loop checks for numbers equal to or greater than 5 as intended, so you get the correct result.
 
 **KENDALL:**  
 So, the key is testing the code and double-checking the logic carefully, right?
 
 **HARRY:**  
-Exactly. With careful testing and attention to detail, you can catch logic errors before they cause trouble.
+Pretty much. With careful testing and attention to detail, you can catch logic errors before they cause trouble.
 
 *(Scene transition back to maze interior)*
 
@@ -207,7 +207,7 @@ An off-by-one error happens when the loop iterates one time too many or one time
 So, the loop works, but it doesn't cover all the cases? Like it skips something or stops too early?
 
 **HARRY:**  
-Exactly. Let me show you an example where we want to count up to 5, but the loop stops too early.
+That's it. Let me show you an example where we want to count up to 5, but the loop stops too early.
 
 *(Scene transition to code example screen - bg_off_by_one_code1)*
 
@@ -221,7 +221,7 @@ In this code, the condition says 'count < 5', so the loop stops before reaching 
 Oh, I see! The loop condition makes it stop before 5, so it misses the chance to print 'True'.
 
 **HARRY:**  
-Exactly! Now let me show you how to fix it by updating the loop condition.
+You've got it! Now let me show you how to fix it by updating the loop condition.
 
 *(Scene transition to corrected code screen - bg_off_by_one_code2)*
 
@@ -235,7 +235,7 @@ Here's the corrected version. By changing the condition to 'count <= 5', the loo
 So, I just need to carefully check the loop conditions to make sure it does what I expect. Got it.
 
 **HARRY:**  
-Exactly! Paying attention to loop conditions will help you avoid off-by-one errors and other tricky mistakes.
+That's the whole trick. Paying attention to loop conditions will help you avoid off-by-one errors and other tricky mistakes.
 
 *(Scene transition back to maze interior)*
 
@@ -255,7 +255,7 @@ A pre-test logic error happens when the condition of the loop is false from the 
 So, even if the code is written correctly, the loop doesn't run because of the starting condition?
 
 **HARRY:**  
-Exactly. Let me show you an example where we set up a loop, but the starting condition makes it skip everything.
+Afraid so. Let me show you an example where we set up a loop, but the starting condition makes it skip everything.
 
 *(Scene transition to code example screen - bg_pre_test_logic_error_code1)*
 
@@ -269,7 +269,7 @@ In this code, the loop's condition is 'count < 1', but the starting value is 5. 
 Oh, I see! The loop doesn't even get a chance to start because the condition fails right away.
 
 **HARRY:**  
-Exactly! Now let me show you how to fix it by adjusting the starting value and condition.
+Now you're seeing it! Let me show you how to fix it by adjusting the starting value and condition.
 
 *(Scene transition to corrected code screen - bg_pre_test_logic_error_code2)*
 
@@ -283,11 +283,26 @@ Here's the corrected version. By setting the starting value to 1 and the conditi
 So, I need to make sure the starting value and condition are aligned to allow the loop to run properly. Got it.
 
 **HARRY:**  
-Exactly! Setting the right initial value and condition is key to avoiding pre-test logic errors.
+Precisely. Setting the right initial value and condition is key to avoiding pre-test logic errors.
 
 *(Scene transition back to maze interior)*
 
 **[Returns to error selection menu until all 4 errors are completed]**
+
+---
+
+### SCENE 2.4: All Errors Complete - Transition to Quizzes
+**Location:** Maze Interior  
+**Characters:** Harry  
+**Source File:** Story/Maze/scene5_insideTheMaze.rpy (label: all_errors_done)
+
+*(Plays once the player has finished all four error explanations, immediately before the quizzes begin)*
+
+**HARRY:**  
+These are just a couple of examples. Errors can be tricky, but you'll get better at spotting them with practice.
+
+**HARRY:**  
+Before we tackle the maze, let's make sure you really understand these concepts.
 
 ---
 

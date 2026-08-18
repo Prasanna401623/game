@@ -43,8 +43,9 @@ screen maze_challenge_1_screen():
 # Correct Answer for Challenge 1
 label correct_answer_challenge_1:
     if "maze_challenge_1" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "maze_challenge_1" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("maze_challenge_1")
         show harry at left
         harry "Perfect! The loop should continue while we're NOT at the exit. Great job!"
@@ -55,14 +56,14 @@ label correct_answer_challenge_1:
         
         hide kendall
         show harry at left
-        harry "Exactly! Let's move forward."
+        harry "Nice work. Let's move forward."
         hide harry
     return
 
 # Wrong Answer for Challenge 1
 label wrong_answer_challenge_1:
     if "maze_challenge_1" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("maze_challenge_1")
         $ attempts += 1
         show harry at left
         harry "Not quite. Think about when the loop should keep running."
@@ -126,8 +127,9 @@ screen maze_challenge_2_screen():
 # Correct Answer for Challenge 2
 label correct_answer_challenge_2:
     if "maze_challenge_2" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "maze_challenge_2" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("maze_challenge_2")
         show harry at left
         harry "Excellent! Adding a step counter prevents infinite loops while still checking for the exit."
@@ -138,14 +140,14 @@ label correct_answer_challenge_2:
         
         hide kendall
         show harry at left
-        harry "Exactly! That's how you write safe loops."
+        harry "Spot on. That's how you write safe loops."
         hide harry
     return
 
 # Partial Answer for Challenge 2
 label partial_answer_challenge_2:
     if "maze_challenge_2" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("maze_challenge_2")
         $ attempts += 1
         show harry at left
         harry "That works, but what if the maze has a bug? We might get stuck in an infinite loop!"
@@ -160,7 +162,7 @@ label partial_answer_challenge_2:
 # Wrong Answer for Challenge 2
 label wrong_answer_challenge_2:
     if "maze_challenge_2" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("maze_challenge_2")
         $ attempts += 1
         show harry at left
         harry "That's not quite right. We still need to check if we've reached the exit!"
@@ -219,8 +221,9 @@ screen maze_challenge_3_screen():
 # Correct Answer for Challenge 3
 label correct_answer_challenge_3:
     if "maze_challenge_3" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "maze_challenge_3" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("maze_challenge_3")
         show harry at left
         harry "Perfect! Using <= 5 means we check paths 1, 2, 3, 4, and 5. That's exactly what we need!"
@@ -231,15 +234,16 @@ label correct_answer_challenge_3:
         
         hide kendall
         show harry at left
-        harry "Exactly! You've got off-by-one errors figured out!"
+        harry "That's the difference. You've got off-by-one errors figured out!"
         hide harry
     return
 
 # Alternative Correct Answer for Challenge 3
 label correct_answer_challenge_3_alt:
     if "maze_challenge_3" not in completed_quizzes:
-        $ score += 1
         $ max_score += 1
+        if "maze_challenge_3" not in missed_questions:
+            $ score += 1
         $ completed_quizzes.add("maze_challenge_3")
         show harry at left
         harry "Correct! Using < 6 also checks paths 1 through 5. Both this and <= 5 work!"
@@ -250,14 +254,14 @@ label correct_answer_challenge_3_alt:
         
         hide kendall
         show harry at left
-        harry "Exactly! As long as the logic is correct, there are often multiple solutions."
+        harry "Often, yes. As long as the logic is correct, there are usually multiple solutions."
         hide harry
     return
 
 # Wrong Answer for Challenge 3
 label wrong_answer_challenge_3:
     if "maze_challenge_3" not in completed_quizzes:
-        $ max_score += 1
+        $ missed_questions.add("maze_challenge_3")
         $ attempts += 1
         show harry at left
         harry "Not quite. That would only check paths 1, 2, 3, and 4. We'd miss path 5!"

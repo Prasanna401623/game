@@ -10,7 +10,7 @@
 **Characters:** Harry, Kendall  
 **Source File:** Story/Quizzes/quiz.rpy
 
-*(After all four errors have been learned in Act 2)*
+*(After all four errors have been learned in Act 2, continuing directly from Scene 2.4, "All Errors Complete")*
 
 **HARRY:**  
 Great work learning about all those errors! Now let's see how well you understood them.
@@ -41,7 +41,7 @@ Good job! The condition never changes, so the loop runs forever.
 That makes sense! So we need to be careful about our loop conditions.
 
 **HARRY:**  
-Exactly! Now you know how to spot infinite loops.
+That's the idea. Now you know how to spot infinite loops.
 
 **KENDALL:**  
 I can't wait to learn more!
@@ -91,23 +91,23 @@ Let's test your understanding of off-by-one errors!
 
 **[QUIZ QUESTION DISPLAYED: How many times does this loop print 'Hello'?]**
 - 6 times
-- 5 times
-- 4 times *(CORRECT)*
+- 5 times *(CORRECT)*
+- 4 times
 
 **HARRY (if correct):**  
-Perfect! The loop runs while count < 5, so it stops before reaching 5. It prints 'Hello' 4 times (when count is 1, 2, 3, and 4).
+Perfect! Count starts at 0, so the loop runs for 0, 1, 2, 3, and 4. That's 'Hello' five times before the condition fails.
 
 **KENDALL:**  
-So if we wanted it to print 5 times, we'd need to use count <= 5?
+I almost said 4. I assumed it started counting at 1.
 
 **HARRY:**  
-Exactly! Just pay attention to < versus <=.
+And that's the trap. Off-by-one errors come from the starting value just as often as from the condition.
 
 **KENDALL:**  
-Got it! I'll be more careful with my loop conditions.
+Got it! I'll check both ends before I trust a loop.
 
 **HARRY (if incorrect):**  
-Not quite. The loop uses < (less than), not <= (less than or equal to), so it stops before reaching 5.
+Not quite. Trace it carefully: count starts at 0, and the loop runs while count < 5. That's 0, 1, 2, 3, and 4.
 *(If 2+ attempts) Let me explain off-by-one errors again. [Returns to off_by_one_error]*
 *(Option to try again or re-read about Off-By-One Errors)*
 
@@ -166,7 +166,7 @@ You're right. The knowledge was important, but now we need to actually use it to
 So... we need to write the actual code to navigate through?
 
 **HARRY:**  
-Exactly! I'll help guide you, but you'll need to make the decisions yourself. Think of it like... I'm your code reviewer, but you're the programmer.
+That's right! I'll help guide you, but you'll need to make the decisions yourself. Think of it like... I'm your code reviewer, but you're the programmer.
 
 **KENDALL:**  
 No pressure, right? Okay, I can do this. Let's start!
@@ -191,7 +191,7 @@ Perfect! The loop should continue while we're NOT at the exit. Great job!
 That makes sense! We keep going until we reach the exit.
 
 **HARRY:**  
-Exactly! Let's move forward.
+Nice work. Let's move forward.
 
 **HARRY (if incorrect):**  
 Not quite. Think about when the loop should keep running.
@@ -220,7 +220,7 @@ Excellent! Adding a step counter prevents infinite loops while still checking fo
 So we check both conditions—not at exit AND haven't exceeded max steps!
 
 **HARRY:**  
-Exactly! That's how you write safe loops.
+Spot on. That's how you write safe loops.
 
 **HARRY (if partial answer - option C):**  
 That works, but what if the maze has a bug? We might get stuck in an infinite loop! Think about what we learned about preventing infinite loops.
@@ -244,8 +244,34 @@ So we need to check all 5 paths, numbered 1 through 5?
 **HARRY:**  
 Exactly. Which loop condition will check all 5 without missing any?
 
-**[CHALLENGE 3 QUESTION DISPLAYED ON SCREEN]**
-*(Player selects answer - specific dialogue will depend on code shown in game)*
+**[CHALLENGE 3 QUESTION: Check exactly 5 paths (1 to 5)]**
+- Option A: while path < 6 *(CORRECT - alternate)*
+- Option B: while path < 5
+- Option C: while path <= 5 *(CORRECT)*
+
+**DESIGN NOTE:** Two of the three options are correct by design. `while path <= 5` and `while path < 6` both check paths 1 through 5, so both are accepted and each has its own dialogue branch. Only `while path < 5` is wrong, because it stops at path 4. This is deliberate: after three challenges of matching one right answer, the goal is to show that correct logic can be written more than one way.
+
+**HARRY (if correct - option C, `while path <= 5`):**  
+Perfect! Using <= 5 means we check paths 1, 2, 3, 4, and 5. That's exactly what we need!
+
+**KENDALL:**  
+I see! The <= includes 5, while < would stop before it.
+
+**HARRY:**  
+That's the difference. You've got off-by-one errors figured out!
+
+**HARRY (if correct - option A, `while path < 6`):**  
+Correct! Using < 6 also checks paths 1 through 5. Both this and <= 5 work!
+
+**KENDALL:**  
+So there can be multiple ways to write the same logic?
+
+**HARRY:**  
+Often, yes. As long as the logic is correct, there are usually multiple solutions.
+
+**HARRY (if wrong answer - option B, `while path < 5`):**  
+Not quite. That would only check paths 1, 2, 3, and 4. We'd miss path 5! Remember what we learned about off-by-one errors.
+*(If 2+ attempts) We need to include 5 in our check. Think about < versus <=.*
 
 ---
 
