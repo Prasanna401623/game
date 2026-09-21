@@ -115,10 +115,16 @@
 #     h "Keep going! We’re bound to find the right path."
 
 label start:
+    call telemetry_intro
     call school_scene from _call_school_scene  # Call the first scene
+    $ telemetry_send("school_scene")
     call hallway_scene from _call_hallway_scene # Call the second scene
+    $ telemetry_send("hallway_scene")
     call classroom_scene from _call_classroom_scene # Call the third scene
+    $ telemetry_send("classroom_scene")
     call maze_entrance from _call_maze_entrance # Call the fourth scene
+    $ telemetry_send("maze_entrance")
     call inside_maze from _call_inside_maze # Call the fifth scene
     # Quizzes are now called automatically after all errors are learned
+    $ telemetry_send("inside_maze", completed=True)
     return
