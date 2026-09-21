@@ -20,10 +20,10 @@ label all_quizzes:
     hide harry
     
     # Run all 4 quizzes in sequence
-    call infinite_loop_quiz
-    call logic_error_quiz
-    call off_by_one_quiz
-    call pre_test_logic_quiz
+    call infinite_loop_quiz from _call_infinite_loop_quiz
+    call logic_error_quiz from _call_logic_error_quiz
+    call off_by_one_quiz from _call_off_by_one_quiz
+    call pre_test_logic_quiz from _call_pre_test_logic_quiz
     
     # All quizzes completed - show final score
     scene bg_maze_interior with fade
@@ -301,14 +301,14 @@ label wrong_answer_infinite:
         if attempts >= 2:
             harry "Let me explain this concept again."
             $ attempts = 0
-            call infinite_loop_error
+            call infinite_loop_error from _call_infinite_loop_error_1
             jump infinite_loop_quiz
         else:
             menu:
                 "Try again":
                     jump infinite_loop_quiz
                 "Re-read about Infinite Loops":
-                    call infinite_loop_error
+                    call infinite_loop_error from _call_infinite_loop_error_2
                     jump infinite_loop_quiz
     return
 
@@ -384,14 +384,14 @@ label wrong_answer_logic:
         if attempts >= 2:
             harry "Let me explain logic errors again."
             $ attempts = 0
-            call logic_error
+            call logic_error from _call_logic_error_1
             jump logic_error_quiz
         else:
             menu:
                 "Try again":
                     jump logic_error_quiz
                 "Re-read about Logic Errors":
-                    call logic_error
+                    call logic_error from _call_logic_error_2
                     jump logic_error_quiz
     return
 
@@ -467,14 +467,14 @@ label wrong_answer_off_by_one:
         if attempts >= 2:
             harry "Let me explain off-by-one errors again."
             $ attempts = 0
-            call off_by_one_error
+            call off_by_one_error from _call_off_by_one_error_1
             jump off_by_one_quiz
         else:
             menu:
                 "Try again":
                     jump off_by_one_quiz
                 "Re-read about Off-By-One Errors":
-                    call off_by_one_error
+                    call off_by_one_error from _call_off_by_one_error_2
                     jump off_by_one_quiz
     return
 
@@ -550,14 +550,14 @@ label wrong_answer_pre_test:
         if attempts >= 2:
             harry "Let me explain pre-test logic errors again."
             $ attempts = 0
-            call pre_test_logic_error
+            call pre_test_logic_error from _call_pre_test_logic_error_1
             jump pre_test_logic_quiz
         else:
             menu:
                 "Try again":
                     jump pre_test_logic_quiz
                 "Re-read about Pre-Test Logic Errors":
-                    call pre_test_logic_error
+                    call pre_test_logic_error from _call_pre_test_logic_error_2
                     jump pre_test_logic_quiz
     return
 

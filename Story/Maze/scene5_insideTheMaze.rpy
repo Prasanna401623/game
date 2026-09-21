@@ -103,13 +103,13 @@ label choose_error:
         # Call the matching error explanation. Each one returns here when it
         # finishes, so the loop can offer the remaining errors.
         if choice == "Infinite Loop":
-            call infinite_loop_error
+            call infinite_loop_error from _call_infinite_loop_error
         elif choice == "Logic Error":
-            call logic_error
+            call logic_error from _call_logic_error
         elif choice == "Off-By-One Error":
-            call off_by_one_error
+            call off_by_one_error from _call_off_by_one_error
         elif choice == "Pre-Test Logic Error":
-            call pre_test_logic_error
+            call pre_test_logic_error from _call_pre_test_logic_error
 
     jump all_errors_done  # Once all errors are covered, continue the game
 
@@ -120,7 +120,7 @@ label all_errors_done:
     hide harry
     
     # Call all quizzes in sequence
-    call all_quizzes
+    call all_quizzes from _call_all_quizzes
     
     # After quizzes, move to enable phase
     jump enable_phase  # Jump to the next scene instead of returning

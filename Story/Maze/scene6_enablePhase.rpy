@@ -32,9 +32,9 @@ label enable_phase:
     $ attempts = 0
     
     # Run the 3 code challenges
-    call maze_challenge_1
-    call maze_challenge_2
-    call maze_challenge_3
+    call maze_challenge_1 from _call_maze_challenge_1
+    call maze_challenge_2 from _call_maze_challenge_2
+    call maze_challenge_3 from _call_maze_challenge_3
     
     # All challenges completed - Move to victory
     jump maze_victory
