@@ -68,13 +68,32 @@ init -1 python:
 
 default persistent.telemetry_code = None
 
+# A centered variant of the built-in "input" screen (screens.rpy:175), used
+# only for the telemetry code prompt so nothing else in the game is affected.
+screen telemetry_input_screen(prompt):
+    style_prefix "input"
+
+    window:
+        xalign 0.5
+        yalign 0.5
+
+        vbox:
+            xalign 0.5
+            xsize gui.dialogue_width
+
+            text prompt style "input_prompt" xalign 0.5
+            input id "input" xalign 0.5
+
 label telemetry_intro:
     if persistent.telemetry_code is None:
         if TELEMETRY_REQUIRE_CODE:
             python:
                 entered_code = ""
                 while entered_code not in TELEMETRY_VALID_CODES:
-                    entered_code = renpy.input("Enter the code your instructor gave you:").strip().upper()
+                    entered_code = renpy.input(
+                        "Enter the code your instructor gave you:",
+                        screen="telemetry_input_screen",
+                    ).strip().upper()
                     if entered_code not in TELEMETRY_VALID_CODES:
                         renpy.notify("That code wasn't recognized. Please check it and try again.")
             $ persistent.telemetry_code = entered_code

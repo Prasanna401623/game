@@ -8,7 +8,7 @@ label school_scene:
     "Everything looks ordinary. But today isn't ordinary at all."
 
     # Add ambient sound for atmosphere
-    play music "../audio/laststop-school.mp3"
+    play music "audio/laststop-school.mp3"
 
     "Inside, a challenge waits. It will demand more than technical skill."
 
