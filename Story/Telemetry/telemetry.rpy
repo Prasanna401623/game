@@ -23,6 +23,16 @@ init -1 python:
 
     TELEMETRY_URL = "https://script.google.com/macros/s/AKfycbynYI3oWEvoR0cRhW1cu9JWh1KijENq7o0jX7605RT-jTA-7jajpCYxoGJKxhRjOTRCvw/exec"
 
+    # 21 codes: 20 to hand out to students, 1 (the last one) kept aside for
+    # your own testing so it doesn't pollute the real 20.
+    TELEMETRY_VALID_CODES = frozenset([
+        "367M7C", "4ZFG9K", "5NQG4C", "5QSK5F", "65GCG4",
+        "8EHRZL", "9BLSGV", "9DP3MN", "BL23KP", "E7P482",
+        "F54S5S", "GRMMYM", "GZG82V", "KNMLRS", "KQTSAK",
+        "KT2GPV", "N9P49D", "UHU75H", "VKKMVJ", "XGA7JP",
+        "XGRH2N",  # <- reserved for your own testing
+    ])
+
     def telemetry_send(scene, completed=False, event=None):
         if not TELEMETRY_URL:
             return
@@ -63,8 +73,10 @@ label telemetry_intro:
         if TELEMETRY_REQUIRE_CODE:
             python:
                 entered_code = ""
-                while not entered_code:
+                while entered_code not in TELEMETRY_VALID_CODES:
                     entered_code = renpy.input("Enter the code your instructor gave you:").strip().upper()
+                    if entered_code not in TELEMETRY_VALID_CODES:
+                        renpy.notify("That code wasn't recognized. Please check it and try again.")
             $ persistent.telemetry_code = entered_code
         else:
             $ persistent.telemetry_code = "OPEN"
