@@ -23,14 +23,31 @@ init -1 python:
 
     TELEMETRY_URL = "https://script.google.com/macros/s/AKfycbynYI3oWEvoR0cRhW1cu9JWh1KijENq7o0jX7605RT-jTA-7jajpCYxoGJKxhRjOTRCvw/exec"
 
-    # 21 codes: 20 to hand out to students, 1 (the last one) kept aside for
-    # your own testing so it doesn't pollute the real 20.
+    # 100 codes. XGRH2N is reserved for your own testing so it doesn't mix
+    # with real student data. The rest are for students plus spares.
+    # Adding or changing codes means rebuilding and republishing the tracked build.
     TELEMETRY_VALID_CODES = frozenset([
         "367M7C", "4ZFG9K", "5NQG4C", "5QSK5F", "65GCG4",
         "8EHRZL", "9BLSGV", "9DP3MN", "BL23KP", "E7P482",
         "F54S5S", "GRMMYM", "GZG82V", "KNMLRS", "KQTSAK",
         "KT2GPV", "N9P49D", "UHU75H", "VKKMVJ", "XGA7JP",
         "XGRH2N",  # <- reserved for your own testing
+        "2LE72Y", "3MTMPR", "3PY83A", "78E2AM", "8PGYRT",
+        "8U79DM", "AKV9BU", "AUQLBW", "B9RVGT", "BMF9BQ",
+        "BVFFRZ", "C6XEZ2", "C9GU7C", "HNL2QN", "J8DRPA",
+        "KCUQB3", "KU97K7", "KUFFA9", "MMYXJF", "MWCDN8",
+        "N7QA4G", "N838N4", "R7F3HG", "RDMYZK", "UGAF7G",
+        "V7JGRA", "WJ8JFU", "YDDKUB", "YQ2TPR",
+        "3KN46T", "3XNATM", "3YCJ28", "42T8WV", "4X2P2B",
+        "4Y6ZBT", "6P8MUH", "6Q8UBJ", "7F88QW", "8ZWE46",
+        "9FNUMM", "BZFW8G", "CVRF73", "DK4D36", "DL2CFU",
+        "E3AF4K", "E7KGDB", "EGNH8N", "G9962N", "GDGVH8",
+        "GR3J6D", "GXF3YG", "HEVD68", "HJC86U", "JH2ZXK",
+        "JJ7YML", "JNY7Z7", "JR9RWX", "KNQ7UW", "KTBRC8",
+        "LXJZEH", "MDMQGM", "MZWAUH", "N8LWN6", "NUDCZY",
+        "P8HF7W", "Q9PMXB", "TK87KL", "U4MTXH", "U82M4N",
+        "UDCBB9", "VG7PBH", "WBCDGA", "WEP6YA", "XBLKH7",
+        "XBZ4XJ", "XF9RLX", "XGHURV", "YLDJUZ", "ZVFNQZ",
     ])
 
     def telemetry_send(scene, completed=False, event=None):
